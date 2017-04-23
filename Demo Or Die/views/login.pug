@@ -2,8 +2,9 @@ head
 	title Log in
 	link(href="stylesheets/css/style.css", rel="stylesheet")
 body
+
 	main
 		div.green
 		div.red
 		h1(class="header-title")= demotitle
-		a.btn.btn__login(href='#') Log in with Facebook
+		a(href="/auth/facebook", class="btn btn__login") Login via Facebook

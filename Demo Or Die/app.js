@@ -4,6 +4,18 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var config = require('./routes/fb.js');
+
+
+var dbConfig = require('./config/db.js');
+var mongoose = require('mongoose');
+mongoose.connect(dbConfig.url);
+
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+    // we're connected!
+});
 
 var users = require('./routes/users');
 var profile = require('./routes/profile');
@@ -12,6 +24,7 @@ var admin = require('./routes/admin');
 var vote = require('./routes/vote');
 
 var app = express();
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -48,6 +61,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 app.listen(3001, function () {
     console.log('Example app listening on port 3001!');

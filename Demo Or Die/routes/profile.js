@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var demotitle = "Demo Or Die!";
-var name = "Some Name";
+var name = "some user";
 var groups = "Some groups";
 var time = "Some time";
 
