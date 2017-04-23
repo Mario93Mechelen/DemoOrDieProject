@@ -7,6 +7,10 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var profile = require('./routes/profile');
+var login = require('./routes/login');
+var admin = require('./routes/admin');
+var vote = require('./routes/vote');
 
 var app = express();
 
@@ -24,6 +28,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/profile', profile);
+app.use('/login', login);
+app.use('/admin', admin);
+app.use('/vote', vote);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -44,8 +52,8 @@ app.use(function(err, req, res, next) {
 });
 
 app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
-  console.log('gewoon wat bijtesten');
+    console.log('Example app listening on port 3000!');
+    console.log('gewoon wat bijtesten');
 });
 
 module.exports = app;
