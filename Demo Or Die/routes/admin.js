@@ -5,8 +5,12 @@ var demotitle = "Demo Or Die!";
 
 
 /* GET login page. */
-router.get('/', function(req, res, next) {
-    res.render('endvoting');
+router.get('/users', function(req, res, next) {
+    res.render('users');
+});
+
+router.get('/endvoting', function(req, res, next){
+	res.render('endvoting');
 });
 
 
