@@ -1,7 +1,26 @@
 .btn {
   background-color: grey;
+  color: lightgray;
+  font-weight: bold;
   border-radius: 5px;
+  width: 50%;
   padding: 0.7em;
-  text-shadow: 1px 1px hotpink; }
+  text-shadow: 1px 1px white;
+  text-decoration: none;
+  font-family: 'comic sans ms';
+  position: absolute; }
+
+.btn__login {
+  position: fixed;
+  bottom: 0;
+  margin: auto;
+  left: 0;
+  right: 0; }
+
+main {
+  width: 300px;
+  height: 500px;
+  background-color: red;
+  position: relative; }
 
 /*# sourceMappingURL=style.css.map */

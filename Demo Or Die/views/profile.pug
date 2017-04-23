@@ -2,6 +2,8 @@ head
 	title Profile
 body
 	div.container-userinfo
+		div.red
+		div.green
 		h2(class="header-name")= name
 		h1(class="header-title")= demotitle
 	div.container-demoinfo
@@ -16,3 +18,10 @@ body
 				p(class="info-user date")= time
 		div.info-user.info-rank
 			p.info
+				| Wow, you're at 
+				span#percentageDemo xx
+				|     % demo and only
+				span#percentageDie xx
+				|     % die. You can bring up your ranking to 
+				span#percentageDemoHigher xx
+				|     demo if you nail the next one!	
