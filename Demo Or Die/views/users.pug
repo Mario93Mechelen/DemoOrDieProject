@@ -1,0 +1,15 @@
+head
+    title Admin Users Overview
+    link(href="stylesheets/css/style.css", rel="stylesheet")
+body
+    form
+        label(for='group') Select a Group
+        select(type='dropdown', name='group')
+            option All
+            option Webtech1
+            option Webtech2
+            option PHP1
+        label(for='findUser')
+        input(type='text', placeholder='Type Name')
+    .users
+    a.btn.btn__startvote(href='#') Start Random Voting

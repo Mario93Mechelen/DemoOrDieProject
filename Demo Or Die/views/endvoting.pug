@@ -1,0 +1,22 @@
+head
+    title Voting in progress
+    link(href="stylesheets/css/style.css", rel="stylesheet")
+body
+    div.container-userinfo
+        div.red
+        div.green
+        h2(class="header-name")= name
+        h1(class="header-title")= demotitle
+    div.container-demoinfo
+        div.info-user.bold
+            span.left
+            p.info.info-demo In groups
+            span.left
+            p.info.info-demo Last time on stage
+            span.right
+            p(class="info-user groups")= groups
+            span.right
+            p(class="info-user date")= time
+        div.info-user.info
+            p Users are now voting in this "demo or die" seesion. Press the button below to end voting.
+    a.btn.btn__endvote(href='#') End Voting

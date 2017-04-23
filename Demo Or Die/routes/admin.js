@@ -6,7 +6,7 @@ var demotitle = "Demo Or Die!";
 
 /* GET login page. */
 router.get('/', function(req, res, next) {
-    res.send('admin page');
+    res.render('endvoting');
 });
 
 

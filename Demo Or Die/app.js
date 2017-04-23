@@ -5,7 +5,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var index = require('./routes/index');
 var users = require('./routes/users');
 var profile = require('./routes/profile');
 var login = require('./routes/login');
@@ -26,7 +25,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
 app.use('/users', users);
 app.use('/profile', profile);
 app.use('/login', login);
@@ -52,7 +50,7 @@ app.use(function(err, req, res, next) {
 });
 
 app.listen(3001, function () {
-    console.log('Example app listening on port 3000!');
+    console.log('Example app listening on port 3001!');
     console.log('gewoon wat bijtesten');
 });
 
