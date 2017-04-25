@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var facebook = require('./routes/facebook');
 var users = require('./routes/users');
 var profile = require('./routes/profile');
 var login = require('./routes/login');
@@ -30,6 +31,7 @@ app.use('/profile', profile);
 app.use('/login', login);
 app.use('/admin', admin);
 app.use('/vote', vote);
+app.use('/auth/facebook', facebook);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
