@@ -1,21 +1,19 @@
 .btn {
-  background-color: grey;
-  color: lightgray;
-  font-weight: bold;
+  background-color: #5e5e5e;
+  color: white;
   border-radius: 5px;
-  width: 50%;
-  padding: 0.7em;
-  text-shadow: 1px 1px white;
+  display: block;
+  width: 260px;
+  padding: 0.7em 0em;
+  margin: 100px auto 0 auto;
+  bottom: 20px;
+  text-shadow: 1px 1px #aaaaaa;
   text-decoration: none;
-  font-family: 'comic sans ms';
-  position: absolute; }
+  text-align: center;
+  transition: all 0.3s ease-in-out; }
 
-.btn__login {
-  position: fixed;
-  bottom: 0;
-  margin: auto;
-  left: 0;
-  right: 0; }
+.btn__login:hover {
+  background-color: #2b2b2b; }
 
 main {
   width: 300px;
