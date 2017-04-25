@@ -79,6 +79,13 @@ main {
   height: 300px;
   position: absolute; }
 
+.container-demoinfo {
+  color: #2b2b2b;
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  bottom: 0; }
+
 .header {
   color: #eeeeee;
   position: absolute; }
@@ -95,6 +102,30 @@ main {
   font-size: 2.5em;
   width: 60%;
   margin: 0 auto;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  text-shadow: 2px 2px #a2a2a2, 4px 4px #555555; }
+
+.left {
+  display: block;
+  position: relative;
+  width: 275px;
+  padding-left: 25px;
+  text-align: left; }
+
+.right {
+  display: block;
+  position: relative;
+  width: 275px;
+  padding-right: 25px;
+  text-align: right;
+  top: -70px;
+  font-weight: bold; }
+
+.info-rank {
+  border-top: 1px groove #5e5e5e;
+  color: #5e5e5e;
+  position: relative;
+  top: -60px;
+  padding: 5px; }
 
 /*# sourceMappingURL=style.css.map */
