@@ -1,7 +1,39 @@
-main
-{
+main {
 	width:300px;
 	height:500px;
-	background-color: red;
+	background-color: transparent;
 	position:relative;
+	font-family: "Gill Sans MT", sans-serif;
+}
+
+.bg-lefttop {
+	position: absolute;
+	z-index: -1;
+	width: 0;
+	height: 0;
+	border-top: 500px solid $green_base;
+	border-right: 300px solid transparent;
+}
+
+.bg-rightbottom {
+	position: absolute;
+	z-index: -1;
+	width: 0;
+	height: 0;
+	border-bottom: 500px solid $red_base;
+	border-left: 300px solid transparent;
+}
+
+.title {
+	color: $offwhite;
+	text-transform: uppercase;
+	font-size: 2.5em;
+	text-align: center;
+	width: 40%;
+	margin: 0 auto;
+}
+
+.title__login {
+	padding-top: 200px;
+	text-shadow: 2px 2px darken($offwhite, 30%), 4px 4px darken($offwhite, 60%);
 }

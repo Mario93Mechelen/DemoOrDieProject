@@ -20,7 +20,36 @@
 main {
   width: 300px;
   height: 500px;
-  background-color: red;
-  position: relative; }
+  background-color: transparent;
+  position: relative;
+  font-family: "Gill Sans MT", sans-serif; }
+
+.bg-lefttop {
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  border-top: 500px solid #03c41e;
+  border-right: 300px solid transparent; }
+
+.bg-rightbottom {
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  border-bottom: 500px solid #fd3f3f;
+  border-left: 300px solid transparent; }
+
+.title {
+  color: #eeeeee;
+  text-transform: uppercase;
+  font-size: 2.5em;
+  text-align: center;
+  width: 40%;
+  margin: 0 auto; }
+
+.title__login {
+  padding-top: 200px;
+  text-shadow: 2px 2px #a2a2a2, 4px 4px #555555; }
 
 /*# sourceMappingURL=style.css.map */
