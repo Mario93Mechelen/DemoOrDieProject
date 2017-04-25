@@ -1,3 +1,43 @@
+.bg-lefttop {
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  border-top: 500px solid #03c41e;
+  border-right: 300px solid transparent; }
+
+.bg-rightbottom {
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  border-bottom: 500px solid #fd3f3f;
+  border-left: 300px solid transparent; }
+
+.bg-image {
+  background-image: url("../../images/example_image.jpg");
+  background-size: contain;
+  filter: grayscale(1);
+  height: 100%;
+  width: 100%;
+  z-index: -1; }
+
+.bg-statusdie {
+  background-color: #fd3f3f;
+  height: 25%;
+  width: 300px;
+  opacity: 0.5;
+  position: absolute;
+  top: 0; }
+
+.bg-statusdemo {
+  background-color: #03c41e;
+  height: 75%;
+  width: 300px;
+  opacity: 0.5;
+  position: absolute;
+  bottom: 0; }
+
 .btn {
   background-color: #5e5e5e;
   color: white;
@@ -22,22 +62,6 @@ main {
   position: relative;
   font-family: "Gill Sans MT", sans-serif; }
 
-.bg-lefttop {
-  position: absolute;
-  z-index: -1;
-  width: 0;
-  height: 0;
-  border-top: 500px solid #03c41e;
-  border-right: 300px solid transparent; }
-
-.bg-rightbottom {
-  position: absolute;
-  z-index: -1;
-  width: 0;
-  height: 0;
-  border-bottom: 500px solid #fd3f3f;
-  border-left: 300px solid transparent; }
-
 .title {
   color: #eeeeee;
   text-transform: uppercase;
@@ -49,5 +73,10 @@ main {
 .title__login {
   padding-top: 200px;
   text-shadow: 2px 2px #a2a2a2, 4px 4px #555555; }
+
+.container-userinfo {
+  width: 300px;
+  height: 300px;
+  position: absolute; }
 
 /*# sourceMappingURL=style.css.map */

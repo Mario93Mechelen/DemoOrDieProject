@@ -1,27 +1,30 @@
 head
-	title Profile
+    title Profile
+    link(href="stylesheets/css/style.css", rel="stylesheet")
 body
-	div.container-userinfo
-		div.red
-		div.green
-		h2(class="header-name")= name
-		h1(class="header-title")= demotitle
-	div.container-demoinfo
-		div.info-user.bold
-			span.left
-				p.info.info-demo In groups
-			span.left
-				p.info.info-demo Last time on stage
-			span.right
-				p(class="info-user groups")= groups
-			span.right
-				p(class="info-user date")= time
-		div.info-user.info-rank
-			p.info
-				| Wow, you are at
-				span#percentageDemo xx
-				|     % demo and only
-				span#percentageDie xx
-				|     % die. You can bring up your ranking to
-				span#percentageDemoHigher xx
-				|     demo if you nail the next one!	
+    main
+        div.container-userinfo
+            div(class="bg bg-image")
+            div(class="bg bg-statusdie")
+            div(class="bg bg-statusdemo")
+            h2(class="header-name")= name
+            h1(class="header-title")= status
+        div.container-demoinfo
+            div.info-user.bold
+                span.left
+                p.info.info-demo In groups
+                span.left
+                p.info.info-demo Last time on stage
+                span.right
+                p(class="info-user groups")= groups
+                span.right
+                p(class="info-user date")= time
+            div.info-user.info-rank
+                p.info
+                | Wow, you are at
+                span#percentageDemo xx
+                |     % demo and only
+                span#percentageDie xx
+                |     % die. You can bring up your ranking to
+                span#percentageDemoHigher xx
+                |     demo if you nail the next one!
