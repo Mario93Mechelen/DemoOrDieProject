@@ -1,26 +1,53 @@
 .btn {
-  background-color: grey;
-  color: lightgray;
-  font-weight: bold;
+  background-color: #5e5e5e;
+  color: white;
   border-radius: 5px;
-  width: 50%;
-  padding: 0.7em;
-  text-shadow: 1px 1px white;
+  display: block;
+  width: 260px;
+  padding: 0.7em 0em;
+  margin: 100px auto 0 auto;
+  bottom: 20px;
+  text-shadow: 1px 1px #aaaaaa;
   text-decoration: none;
-  font-family: 'comic sans ms';
-  position: absolute; }
+  text-align: center;
+  transition: all 0.3s ease-in-out; }
 
-.btn__login {
-  position: fixed;
-  bottom: 0;
-  margin: auto;
-  left: 0;
-  right: 0; }
+.btn__login:hover {
+  background-color: #2b2b2b; }
 
 main {
   width: 300px;
   height: 500px;
-  background-color: red;
-  position: relative; }
+  background-color: transparent;
+  position: relative;
+  font-family: "Gill Sans MT", sans-serif; }
+
+.bg-lefttop {
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  border-top: 500px solid #03c41e;
+  border-right: 300px solid transparent; }
+
+.bg-rightbottom {
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  border-bottom: 500px solid #fd3f3f;
+  border-left: 300px solid transparent; }
+
+.title {
+  color: #eeeeee;
+  text-transform: uppercase;
+  font-size: 2.5em;
+  text-align: center;
+  width: 40%;
+  margin: 0 auto; }
+
+.title__login {
+  padding-top: 200px;
+  text-shadow: 2px 2px #a2a2a2, 4px 4px #555555; }
 
 /*# sourceMappingURL=style.css.map */
