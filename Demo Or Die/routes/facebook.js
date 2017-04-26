@@ -14,9 +14,26 @@ passport.use(new FacebookStrategy({
   },
   function(accessToken, refreshToken, profile, done) {
     User.findOne({name:profile.displayName}, function(err, user) {
-      if (err) { return done(err); }
-      done(null, user);
+     	if (err) { 
+		  console.log(err)	
+		}
+		if (!err && user!== null){
+		done(null, user);
+		}else{
+			user = new Account({
+			name:profile.displayName,
+			profilepic: profile.photos ? profile.photos[0].value : 'https://scontent-bru2-1.xx.fbcdn.net/v/t1.0-9/15871574_10211706818095211_5225596982032469818_n.jpg?oh=a87f334aeb3544f44b5b8d6860189aba&oe=59C293C6'
+		});
+		user.save(function(err){
+			if(err){
+				console.log(err);
+			}else{
+				done(null, user);
+			}
+		});
+		}
     });
+	
   }
 ));
 
