@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var passport = require('passport');
+var Strategy = require('passport-facebook').Strategy;
 
 var status = "75% Demo!";
 var name = "Some Name";
@@ -9,7 +11,9 @@ var time = "Some time";
 /* GET profile page. */
 
 router.get('/', function(req, res, next) {
-    res.render('profile', {name: name, status: status, groups: groups, time: time })
+	var name = req.user.name;
+	var photo = req.user.profilepic;
+    res.render('profile', {name: name, photo:photo, status: status, groups: groups, time: time })
 });
 
 module.exports = router;
