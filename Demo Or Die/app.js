@@ -4,12 +4,17 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/facebookusers');
 
+var facebook = require('./routes/facebook');
 var users = require('./routes/users');
 var profile = require('./routes/profile');
 var login = require('./routes/login');
 var admin = require('./routes/admin');
 var vote = require('./routes/vote');
+var groups = require('./routes/groups');
+var endvoting = require('./routes/endvoting');
 
 var app = express();
 
@@ -30,6 +35,9 @@ app.use('/profile', profile);
 app.use('/login', login);
 app.use('/admin', admin);
 app.use('/vote', vote);
+app.use('/auth/facebook', facebook);
+app.use('/groups', groups);
+app.use('/endvoting', endvoting);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -49,7 +57,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.listen(3001, function () {
+app.listen(3000, function () {
     console.log('Example app listening on port 3001!');
     console.log('gewoon wat bijtesten');
 });

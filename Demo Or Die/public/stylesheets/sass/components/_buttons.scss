@@ -4,16 +4,33 @@
 	color:lighten($lightgrey, 40%);
 	border-radius: 5px;
 	display: block;
-	width: 260px;
 	padding:0.7em 0em;
-	margin: 100px auto 0 auto;
 	bottom: 20px;
 	text-shadow:1px 1px $lightgrey;
 	text-decoration:none;
 	text-align: center;
 	transition: all 0.3s ease-in-out;
 }
-.btn__login:hover
+
+.btn:hover
 {
 	background-color: darken($lightgrey, 50%);
+}
+
+.btn__login {
+	margin: 100px auto 0 auto;
+	width: 260px;
+}
+
+.groups__form--submit {
+	margin: 30px auto 0 auto;
+	width: 210px;
+}
+
+.btn__endvote {
+	position: absolute;
+	top: 100px;
+	height: 20px;
+	width: 260px;
+	margin-bottom: 30px;
 }
