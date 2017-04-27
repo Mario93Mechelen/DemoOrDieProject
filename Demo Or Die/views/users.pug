@@ -2,14 +2,24 @@ head
     title Admin Users Overview
     link(href="../stylesheets/css/style.css", rel="stylesheet")
 body
-    form
-        label(for='group') Select a Group
-        select(type='dropdown', name='group')
-            option All
-            option Webtech1
-            option Webtech2
-            option PHP1
-        label(for='findUser')
-        input(type='text', placeholder='Type Name')
-    .users
-    a.btn.btn__startvote(href='#') Start Random Voting
+    main
+        div(class="bg bg-lefttop")
+        div(class="bg bg-rightbottom")
+        form
+            .select_container
+                div(class="select group_select")
+                    label(for='group') Select a Group
+                    select(type='dropdown', name='group' class="select__field")
+                        option All
+                        option Webtech1
+                        option Webtech2
+                        option PHP1
+                div(class="select user_select")
+                    label(for='findUser') Find a User
+                    input(type='text', placeholder='Type Name' class="select__field")
+        .users
+            .users__user
+            .users__user
+            .users__user
+            .users__user
+        a.btn.btn__startvote(href='#') Start Random Voting

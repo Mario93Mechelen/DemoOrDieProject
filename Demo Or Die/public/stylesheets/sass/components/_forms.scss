@@ -42,5 +42,47 @@ legend {
   width: 100%;
 }
 
+.select_container {
+  width: 80%;
+  margin: 0px auto;
+  display: flex;
+  color: $darkblue;
+  padding: 10px;
+  @include alpha-attribute('background-color', rgba($offwhite, 0.8), white);
+}
 
+.select {
+  display: block;
+  width: 50%;
+  flex: 1 1;
+}
+
+.select__field {
+  width: 80%;
+  height: 35px;
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.users {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: flex-start;
+  align-items: flex-start;
+  width: 80%;
+  height: 300px;
+  padding: 10px;
+  margin: 0 auto 20px auto;
+  @include alpha-attribute('background-color', rgba($offwhite, 0.8), white);
+}
+
+.users__user {
+  background-image: url("../../images/example_image.jpg");
+  background-size: contain;
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
+  margin: 5px;
+}
 

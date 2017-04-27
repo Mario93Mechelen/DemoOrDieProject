@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6744694-78f8-4e69-ab3b-e1c2dcc5623c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Demo Or Die/routes/vote_result.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Demo Or Die/views/vote_result.pug" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Demo Or Die/app.js" afterPath="$PROJECT_DIR$/Demo Or Die/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Demo Or Die/public/stylesheets/sass/.sass-cache/4d6a4809b63f484ae4094752004a633a90c27015/_buttons.scssc" afterPath="$PROJECT_DIR$/Demo Or Die/public/stylesheets/sass/.sass-cache/4d6a4809b63f484ae4094752004a633a90c27015/_buttons.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Demo Or Die/public/stylesheets/sass/.sass-cache/4d6a4809b63f484ae4094752004a633a90c27015/_forms.scssc" afterPath="$PROJECT_DIR$/Demo Or Die/public/stylesheets/sass/.sass-cache/4d6a4809b63f484ae4094752004a633a90c27015/_forms.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Demo Or Die/public/stylesheets/css/style.css" afterPath="$PROJECT_DIR$/Demo Or Die/public/stylesheets/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Demo Or Die/public/stylesheets/css/style.css.map" afterPath="$PROJECT_DIR$/Demo Or Die/public/stylesheets/css/style.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Demo Or Die/public/stylesheets/sass/components/_buttons.scss" afterPath="$PROJECT_DIR$/Demo Or Die/public/stylesheets/sass/components/_buttons.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Demo Or Die/public/stylesheets/sass/components/_forms.scss" afterPath="$PROJECT_DIR$/Demo Or Die/public/stylesheets/sass/components/_forms.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Demo Or Die/routes/users.js" afterPath="$PROJECT_DIR$/Demo Or Die/routes/users.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Demo Or Die/views/users.pug" afterPath="$PROJECT_DIR$/Demo Or Die/views/users.pug" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,11 +34,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vote_result.pug" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Demo Or Die/views/vote_result.pug">
+      <file leaf-file-name="users.pug" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Demo Or Die/views/users.pug">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="19" column="40" lean-forward="false" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
+            <state relative-caret-position="440">
+              <caret line="18" column="84" lean-forward="false" selection-start-line="18" selection-start-column="84" selection-end-line="18" selection-end-column="84" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.pug" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Demo Or Die/views/login.pug">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="7" column="38" lean-forward="true" selection-start-line="6" selection-start-column="8" selection-end-line="7" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_forms.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Demo Or Die/public/stylesheets/sass/components/_forms.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="75" column="26" lean-forward="false" selection-start-line="75" selection-start-column="26" selection-end-line="75" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -43,7 +67,7 @@
       <file leaf-file-name="_main.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Demo Or Die/public/stylesheets/sass/components/_main.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1276">
+            <state relative-caret-position="2244">
               <caret line="100" column="11" lean-forward="false" selection-start-line="100" selection-start-column="11" selection-end-line="100" selection-end-column="11" />
               <folding />
             </state>
@@ -53,8 +77,8 @@
       <file leaf-file-name="_background.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Demo Or Die/public/stylesheets/sass/components/_background.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="12" column="11" lean-forward="false" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+            <state relative-caret-position="320">
+              <caret line="19" column="58" lean-forward="true" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -63,18 +87,18 @@
       <file leaf-file-name="_buttons.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Demo Or Die/public/stylesheets/sass/components/_buttons.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="704">
-              <caret line="48" column="22" lean-forward="false" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
+            <state relative-caret-position="264">
+              <caret line="29" column="17" lean-forward="false" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_forms.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Demo Or Die/public/stylesheets/sass/components/_forms.scss">
+      <file leaf-file-name="profile.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Demo Or Die/routes/profile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="32" column="13" lean-forward="false" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+            <state relative-caret-position="242">
+              <caret line="11" column="84" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="84" />
               <folding />
             </state>
           </provider>
@@ -91,7 +115,6 @@
         <option value="$PROJECT_DIR$/Demo Or Die/routes/index.js" />
         <option value="$PROJECT_DIR$/Demo Or Die/routes/vote.js" />
         <option value="$PROJECT_DIR$/Demo Or Die/routes/login.js" />
-        <option value="$PROJECT_DIR$/Demo Or Die/views/users.pug" />
         <option value="$PROJECT_DIR$/Demo Or Die/routes/admin.js" />
         <option value="$PROJECT_DIR$/Demo Or Die/views/login.pug" />
         <option value="$PROJECT_DIR$/Demo Or Die/routes/profile.js" />
@@ -101,16 +124,18 @@
         <option value="$PROJECT_DIR$/Demo Or Die/public/stylesheets/sass/style.scss" />
         <option value="$PROJECT_DIR$/Demo Or Die/views/groups.pug" />
         <option value="$PROJECT_DIR$/Demo Or Die/public/stylesheets/sass/_colors.scss" />
-        <option value="$PROJECT_DIR$/Demo Or Die/public/stylesheets/sass/components/_forms.scss" />
         <option value="$PROJECT_DIR$/Demo Or Die/routes/endvoting.js" />
         <option value="$PROJECT_DIR$/Demo Or Die/views/endvoting.pug" />
         <option value="$PROJECT_DIR$/Demo Or Die/routes/vote_now.js" />
         <option value="$PROJECT_DIR$/Demo Or Die/views/vote_now.pug" />
-        <option value="$PROJECT_DIR$/Demo Or Die/public/stylesheets/sass/components/_buttons.scss" />
         <option value="$PROJECT_DIR$/Demo Or Die/public/stylesheets/sass/components/_main.scss" />
         <option value="$PROJECT_DIR$/Demo Or Die/routes/vote_result.js" />
         <option value="$PROJECT_DIR$/Demo Or Die/app.js" />
         <option value="$PROJECT_DIR$/Demo Or Die/views/vote_result.pug" />
+        <option value="$PROJECT_DIR$/Demo Or Die/routes/users.js" />
+        <option value="$PROJECT_DIR$/Demo Or Die/views/users.pug" />
+        <option value="$PROJECT_DIR$/Demo Or Die/public/stylesheets/sass/components/_buttons.scss" />
+        <option value="$PROJECT_DIR$/Demo Or Die/public/stylesheets/sass/components/_forms.scss" />
       </list>
     </option>
   </component>
@@ -125,8 +150,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="416" />
-    <option name="width" value="1487" />
+    <option name="x" value="722" />
+    <option name="width" value="1181" />
     <option name="height" value="1050" />
   </component>
   <component name="ProjectView">
@@ -416,18 +441,18 @@
       <workItem from="1492945062845" duration="2074000" />
       <workItem from="1493106828066" duration="3572000" />
       <workItem from="1493147669199" duration="2538000" />
-      <workItem from="1493298767454" duration="9529000" />
+      <workItem from="1493298767454" duration="15398000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24481000" />
+    <option name="totallyTimeSpent" value="30350000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="416" y="0" width="1487" height="1050" extended-state="0" />
+    <frame x="722" y="0" width="1181" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21919674" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27687016" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -600,14 +625,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Demo Or Die/routes/users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="38" lean-forward="false" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Demo Or Die/models/account.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -664,14 +681,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Demo Or Die/views/users.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="60" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Demo Or Die/public/stylesheets/sass/_colors.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
@@ -684,14 +693,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
           <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Demo Or Die/routes/profile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="83" lean-forward="true" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="83" />
           <folding />
         </state>
       </provider>
@@ -720,34 +721,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Demo Or Die/views/login.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="67" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Demo Or Die/views/profile.pug">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
           <caret line="20" column="37" lean-forward="true" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Demo Or Die/public/stylesheets/sass/components/_background.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="12" column="11" lean-forward="false" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Demo Or Die/public/stylesheets/sass/components/_buttons.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="48" column="22" lean-forward="false" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -768,18 +745,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Demo Or Die/routes/profile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="84" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Demo Or Die/routes/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Demo Or Die/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="38" column="35" lean-forward="false" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
+        <state relative-caret-position="176">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Demo Or Die/public/stylesheets/sass/components/_main.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1276">
+        <state relative-caret-position="2244">
           <caret line="100" column="11" lean-forward="false" selection-start-line="100" selection-start-column="11" selection-end-line="100" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Demo Or Die/public/stylesheets/sass/components/_background.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="19" column="58" lean-forward="true" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Demo Or Die/views/vote_result.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="36" lean-forward="false" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -792,18 +801,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Demo Or Die/public/stylesheets/sass/components/_forms.scss">
+    <entry file="file://$PROJECT_DIR$/Demo Or Die/views/login.pug">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="32" column="13" lean-forward="false" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+        <state relative-caret-position="154">
+          <caret line="7" column="38" lean-forward="true" selection-start-line="6" selection-start-column="8" selection-end-line="7" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Demo Or Die/views/vote_result.pug">
+    <entry file="file://$PROJECT_DIR$/Demo Or Die/views/users.pug">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="19" column="40" lean-forward="false" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
+        <state relative-caret-position="440">
+          <caret line="18" column="84" lean-forward="false" selection-start-line="18" selection-start-column="84" selection-end-line="18" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Demo Or Die/public/stylesheets/sass/components/_buttons.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="29" column="17" lean-forward="false" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Demo Or Die/public/stylesheets/sass/components/_forms.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="75" column="26" lean-forward="false" selection-start-line="75" selection-start-column="26" selection-end-line="75" selection-end-column="26" />
           <folding />
         </state>
       </provider>
