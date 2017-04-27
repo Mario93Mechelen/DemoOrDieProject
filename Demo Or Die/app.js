@@ -13,6 +13,7 @@ var profile = require('./routes/profile');
 var login = require('./routes/login');
 var admin = require('./routes/admin');
 var vote_now = require('./routes/vote_now');
+var vote_result = require('./routes/vote_result');
 var groups = require('./routes/groups');
 var endvoting = require('./routes/endvoting');
 
@@ -35,6 +36,7 @@ app.use('/profile', profile);
 app.use('/login', login);
 app.use('/admin', admin);
 app.use('/vote_now', vote_now);
+app.use('/vote_result', vote_result);
 app.use('/auth/facebook', facebook);
 app.use('/groups', groups);
 app.use('/endvoting', endvoting);
