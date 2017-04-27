@@ -12,7 +12,7 @@ var users = require('./routes/users');
 var profile = require('./routes/profile');
 var login = require('./routes/login');
 var admin = require('./routes/admin');
-var vote = require('./routes/vote');
+var vote_now = require('./routes/vote_now');
 var groups = require('./routes/groups');
 var endvoting = require('./routes/endvoting');
 
@@ -34,7 +34,7 @@ app.use('/users', users);
 app.use('/profile', profile);
 app.use('/login', login);
 app.use('/admin', admin);
-app.use('/vote', vote);
+app.use('/vote_now', vote_now);
 app.use('/auth/facebook', facebook);
 app.use('/groups', groups);
 app.use('/endvoting', endvoting);

@@ -74,6 +74,10 @@ main {
 	font-weight: bold;
 }
 
+.info-user__name {
+	margin-top: 50px;
+}
+
 .info-rank {
 	border-top: 1px groove darken($lightgrey, 30%);
 	color: darken($lightgrey, 30%);
@@ -89,3 +93,15 @@ main {
 	top: -60px;
 	padding: 5px;
 }
+
+.container-vote-buttons {
+	border-top: 1px groove darken($lightgrey, 30%);
+	position: relative;
+	padding-top: 20px;
+	top: 360px;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+
+

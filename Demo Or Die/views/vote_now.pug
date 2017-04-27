@@ -1,0 +1,20 @@
+head
+    title Profile
+    link(href="stylesheets/css/style.css", rel="stylesheet")
+body
+    main
+        div.container-userinfo
+            div(class="bg bg-image")
+            div(class="bg bg-statusdie")
+            div(class="bg bg-statusdemo")
+            h1(class="header header-title")= status
+        div.container-demoinfo
+            div.info-user.bold
+                span.left
+                    p.info.info-vote Now on stage
+                span.right
+                    p(class="info-user__name")= name
+        div.container-vote-buttons
+            a.btn.btn__demo(href='#') Demo
+            p or
+            a.btn.btn__die(href='#') Die
