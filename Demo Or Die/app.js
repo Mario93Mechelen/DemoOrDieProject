@@ -13,6 +13,7 @@ var profile = require('./routes/profile');
 var login = require('./routes/login');
 var admin = require('./routes/admin');
 var vote = require('./routes/vote');
+var groups = require('./routes/groups');
 
 var app = express();
 
@@ -34,6 +35,7 @@ app.use('/login', login);
 app.use('/admin', admin);
 app.use('/vote', vote);
 app.use('/auth/facebook', facebook);
+app.use('/groups', groups);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
