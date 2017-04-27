@@ -4,6 +4,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/facebookusers');
 
 var facebook = require('./routes/facebook');
 var users = require('./routes/users');
@@ -51,7 +53,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.listen(3001, function () {
+app.listen(3000, function () {
     console.log('Example app listening on port 3001!');
     console.log('gewoon wat bijtesten');
 });
