@@ -13,6 +13,9 @@ var time = "Some time";
 router.get('/', function(req, res, next) {
 	var name = req.user.name;
 	var photo = req.user.profilepic;
+	if(req.user.courses==""){
+		res.redirect('/groups');
+	}
     res.render('profile', {name: name, photo:photo, status: status, groups: groups, time: time })
 });
 

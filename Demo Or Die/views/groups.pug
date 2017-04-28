@@ -7,19 +7,19 @@ body
         div(class="bg bg-lefttop")
         div(class="bg bg-rightbottom")
         .groups
-            form.form.groups__form
+            form(class='form groups__form', method='POST')
                 legend Select your class groups
                 .form__options
                     label.form__options--input
                         input(type='checkbox', name='group', value='Webtech1')
                         | Webtech1
                     label.form__options--input
-                        input(type='checkbox', name='group', value='Webtech1')
+                        input(type='checkbox', name='group', value='Webtech2')
                         | Webtech2
                     label.form__options--input
-                        input(type='checkbox', name='group', value='Webtech1')
+                        input(type='checkbox', name='group', value='php1')
                         | PHP1
                     label.form__options--input
-                        input(type='checkbox', name='group', value='Webtech1')
+                        input(type='checkbox', name='group', value='php2')
                         | PHP2
                 input.btn.groups__form--submit(type='submit', value='Save groups')

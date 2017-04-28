@@ -5,7 +5,6 @@ var flash = require('connect-flash');
 const passport = require('passport')
   , FacebookStrategy = require('passport-facebook').Strategy;
 const Account = require('../models/account');
-const UserCourses = require('../models/courses');
 
 passport.use(new FacebookStrategy({
     clientID: '457359077938042',
@@ -24,7 +23,8 @@ function(accessToken, refreshToken, profile, done) {
       } else {
         user = new Account({
           name: profile.displayName,
-          profilepic:  profile.photos ? profile.photos[0].value : 'http://media-cache-ec0.pinimg.com/736x/f8/18/6b/f8186b8f1b13ddb159119147d6430831.jpg'
+          profilepic:  profile.photos ? profile.photos[0].value : 'http://media-cache-ec0.pinimg.com/736x/f8/18/6b/f8186b8f1b13ddb159119147d6430831.jpg',
+			courses:""
         });
         user.save(function(err) {
           if(err) {
@@ -48,9 +48,20 @@ router.get('/', passport.authenticate('facebook'));
 // authentication process by attempting to obtain an access token.  If
 // access was granted, the user will be logged in.  Otherwise,
 // authentication has failed.
+
 router.get('/callback',
-  passport.authenticate('facebook', { successRedirect: '/profile',
-                                      failureRedirect: '/login' }));
+    passport.authenticate('facebook', { failureRedirect: '/' }), function(req, res){
+      Account.findOne({ courses: req.user.courses }, function(err, user){
+          if(err) {
+            console.log(err);  // handle errors!
+          }
+          if (!err && user.courses !== "empty") {
+            res.redirect('/profile');
+          } else {
+            res.redirect('/groups')
+          }
+      });  
+});
 
 // serialize and deserialize
 passport.serializeUser(function(user, done) {
