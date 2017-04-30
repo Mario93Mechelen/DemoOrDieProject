@@ -4,7 +4,8 @@ var Schema = mongoose.Schema;
 var Account = new Schema({
 	name:String,
 	profilepic:String,
-	courses: Array
+	courses: Array,
+	role: String
 });
 
 module.exports = mongoose.model('Account', Account);

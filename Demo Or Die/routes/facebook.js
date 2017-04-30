@@ -24,7 +24,8 @@ function(accessToken, refreshToken, profile, done) {
         user = new Account({
           name: profile.displayName,
           profilepic:  profile.photos ? profile.photos[0].value : 'http://media-cache-ec0.pinimg.com/736x/f8/18/6b/f8186b8f1b13ddb159119147d6430831.jpg',
-			courses:""
+			courses:"",
+			role:""
         });
         user.save(function(err) {
           if(err) {
@@ -51,11 +52,11 @@ router.get('/', passport.authenticate('facebook'));
 
 router.get('/callback',
     passport.authenticate('facebook', { failureRedirect: '/' }), function(req, res){
-      Account.findOne({ courses: req.user.courses }, function(err, user){
+      Account.findOne({ role: req.user.role }, function(err, user){
           if(err) {
             console.log(err);  // handle errors!
           }
-          if (!err && user.courses !== "") {
+          if (!err && user.role !== "") {
             res.redirect('/profile');
           } else {
             res.redirect('/roles')

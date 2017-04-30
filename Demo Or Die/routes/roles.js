@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req,res){
 	var role = req.body.role;
-	if(role=='admin'){
+	if(role=='Teacher'){
 	var prompt = require('prompt');
  
   // 
@@ -36,12 +36,14 @@ router.post('/', function(req,res){
     if (err)
         console.log(err);
 });
-	res.redirect('/admin');
+	res.redirect('/admin/users');
+	  }
+	  else{
+		  res.redirect('/roles');
 	  }
 	  })
 
-  });
-	}
+  }
 	else{
 	Account.update({name:req.user.name}, {$set:{role:role}}, function(err, result) {
     if (err)
@@ -49,6 +51,6 @@ router.post('/', function(req,res){
 });
 	res.redirect('/profile');
 }
-
+});
 
 module.exports = router;
