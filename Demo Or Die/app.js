@@ -67,8 +67,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.listen(3001, function () {
-    console.log('Example app listening on port 3001!');
+app.listen(3000, function () {
+    console.log('Example app listening on port 3000!');
     console.log('gewoon wat bijtesten');
 });
 
