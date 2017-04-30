@@ -55,10 +55,10 @@ router.get('/callback',
           if(err) {
             console.log(err);  // handle errors!
           }
-          if (!err && user.courses !== "empty") {
+          if (!err && user.courses !== "") {
             res.redirect('/profile');
           } else {
-            res.redirect('/groups')
+            res.redirect('/roles')
           }
       });  
 });

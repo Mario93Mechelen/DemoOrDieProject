@@ -20,6 +20,7 @@ var vote_now = require('./routes/vote_now');
 var vote_result = require('./routes/vote_result');
 var groups = require('./routes/groups');
 var endvoting = require('./routes/endvoting');
+var roles = require('./routes/roles');
 
 var app = express();
 
@@ -49,6 +50,7 @@ app.use('/vote_result', vote_result);
 app.use('/auth/facebook', facebook);
 app.use('/groups', groups);
 app.use('/endvoting', endvoting);
+app.use('/roles',roles);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -67,7 +69,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.listen(3001, function () {
+app.listen(3000, function () {
     console.log('Example app listening on port 3001!');
     console.log('gewoon wat bijtesten');
 });
