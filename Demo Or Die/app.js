@@ -42,7 +42,7 @@ app.use(passport.session());
 app.use(flash());
 
 app.use('/users', users);
-app.use('/profile', profile);
+app.use('/profile/', profile);
 app.use('/login', login);
 app.use('/admin', admin);
 app.use('/vote_now', vote_now);

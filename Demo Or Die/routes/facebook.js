@@ -51,13 +51,17 @@ router.get('/', passport.authenticate('facebook'));
 // authentication has failed.
 
 router.get('/callback',
-    passport.authenticate('facebook', { failureRedirect: '/' }), function(req, res){
+    passport.authenticate('facebook', { failureRedirect: '/login' }), function(req, res){
       Account.findOne({ role: req.user.role }, function(err, user){
           if(err) {
             console.log(err);  // handle errors!
           }
           if (!err && user.role !== "") {
-            res.redirect('/profile');
+			  if(req.user.role=='Student'){
+            res.redirect('/profile/'+req.user.id);
+			  }else{
+				  res.redirect('/admin');
+			  }
           } else {
             res.redirect('/roles')
           }

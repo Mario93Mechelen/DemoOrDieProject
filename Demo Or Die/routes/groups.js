@@ -19,7 +19,7 @@ router.post('/', function(req,res){
     if (err)
         console.log(err);
 });
-	res.redirect('/profile');
+	res.redirect('/profile/'+req.user.id);
 })
 
 module.exports = router;

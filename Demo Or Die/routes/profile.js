@@ -10,11 +10,10 @@ var time = "Some time";
 
 /* GET profile page. */
 
-router.get('/', function(req, res, next) {
+router.get('/:id', function(req, res, next) {
 	var name = req.user.name;
 	var photo = req.user.profilepic;
     var qs = photo.substring(0, photo.indexOf('?'));
-    console.log(qs);
 
 	if(req.user.courses==""){
 		res.redirect('/groups');
