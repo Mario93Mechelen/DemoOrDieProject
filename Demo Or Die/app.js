@@ -70,7 +70,7 @@ app.use(function(err, req, res, next) {
 });
 
 app.listen(3000, function () {
-    console.log('Example app listening on port 3001!');
+    console.log('Example app listening on port 3000!');
     console.log('gewoon wat bijtesten');
 });
 
