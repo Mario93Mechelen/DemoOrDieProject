@@ -1,10 +1,12 @@
 head
     title Profile
     link(href="stylesheets/css/style.css", rel="stylesheet")
+    style(type='text/css').
+        .bg-image {background-image:url(#{photo}?type=large);}
 body
     main
         div.container-userinfo
-            div(class="bg bg-image")
+            div(class='bg bg-image')
             div(class="bg bg-statusdie")
             div(class="bg bg-statusdemo")
             h2(class="header header-name")= name

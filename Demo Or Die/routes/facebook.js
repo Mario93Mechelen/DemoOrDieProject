@@ -23,7 +23,7 @@ function(accessToken, refreshToken, profile, done) {
       } else {
         user = new Account({
           name: profile.displayName,
-          profilepic:  profile.photos ? profile.photos[0].value : 'http://media-cache-ec0.pinimg.com/736x/f8/18/6b/f8186b8f1b13ddb159119147d6430831.jpg',
+          profilepic:  "https://graph.facebook.com/" + profile.id + "/picture" + "?type=normal" + "&access_token=" + accessToken,
 			courses:"",
 			role:""
         });
