@@ -6,4 +6,8 @@ router.get('/', function(req, res, next) {
     res.render('users')
 });
 
+router.post('/', function(req,res,next){
+	console.log('something');
+});
+
 module.exports = router;
