@@ -10,7 +10,7 @@ $(document).ready(function(){
             data: {option: option}
 		}).done(function(response){
             for(i=0; i<response.length; i++){
-				$('.users').append('<a class="profileLink" href="../profile/'+response[i]._id+'"><div class="users__user" style="background-image:url('+response[i].profilepic+');" id="'+response[i]._id+'"></div>');
+				$('.users').append('<a class="profileLink" href="profile/'+response[i]._id+'"><div class="users__user" style="background-image:url('+response[i].profilepic+');" id="'+response[i]._id+'"></div>');
 			}
         });
 

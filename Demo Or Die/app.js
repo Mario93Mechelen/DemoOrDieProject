@@ -44,7 +44,7 @@ app.use(flash());
 app.use('/users', users);
 app.use('/profile/', profile);
 app.use('/login', login);
-app.use('/admin', admin);
+app.use('/admin/', admin);
 app.use('/vote_now', vote_now);
 app.use('/vote_result', vote_result);
 app.use('/auth/facebook', facebook);
