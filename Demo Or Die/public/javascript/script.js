@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	// select a group
 	$('.select__field').on('change',function(){
 		var option = $('.select__field option:selected').val();
 		$('.profileLink').remove();
@@ -12,5 +13,7 @@ $(document).ready(function(){
 				$('.users').append('<a class="profileLink" href="../profile/'+response[i]._id+'"><div class="users__user" style="background-image:url('+response[i].profilepic+');" id="'+response[i]._id+'"></div>');
 			}
         });
+
 	});
+	
 });
