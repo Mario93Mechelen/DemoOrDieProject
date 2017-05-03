@@ -31,7 +31,7 @@ router.get('/:id', function(req, res, next) {
 		res.render('profile', {name: name, photo:qs,courses:modifiedCourses, status: status, groups: groups, time: time })
 	});
 	
-	if(req.user.courses==""){
+	if(req.user.courses=="" && req.user.role=="Student"){
 		res.redirect('/groups');
 	}
 });

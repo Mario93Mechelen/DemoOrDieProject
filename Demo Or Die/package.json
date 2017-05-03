@@ -20,6 +20,7 @@
     "named-routes": "^2.0.6",
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.1",
+    "primus.io": "^4.0.0",
     "prompt": "^1.0.0",
     "pug": "^2.0.0-beta.12",
     "serve-favicon": "~2.4.2"

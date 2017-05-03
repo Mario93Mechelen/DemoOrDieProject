@@ -60,7 +60,7 @@ router.get('/callback',
 			  if(req.user.role=='Student'){
             res.redirect('/profile/'+req.user.id);
 			  }else{
-				  res.redirect('/admin');
+				  res.redirect('/admin/users');
 			  }
           } else {
             res.redirect('/roles')
