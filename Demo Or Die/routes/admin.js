@@ -17,10 +17,15 @@ router.get('/users', function(req, res, next) {
 
 router.post('/users', function(req, res, next){
 var course = req.body.option;
+if (course=='All'){
+Account.find({role:'Student'}, function(err,result){
+	res.send(result);
+});	
+}else{
 Account.find({courses:course}, function(err,result){
-	amount = result.length;
 	res.send(result);
 });
+}
 });
 
 router.get('/endvoting', function(req, res, next){
