@@ -30,7 +30,7 @@ Account.find({courses:course}, function(err,result){
 }
 });
 
-router.get('/profile/:id', function(req,res,next){
+router.get('/profile/:id', function(req, res, next){
 	var id = req.params.id;
 	
 	Account.findOne({_id: id}, function(err,user){
