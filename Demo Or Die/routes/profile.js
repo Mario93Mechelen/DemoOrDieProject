@@ -20,8 +20,15 @@ router.get('/:id', function(req, res, next) {
 		var name = user.name;
 		var photo = user.profilepic;
 		var courses = user.courses;
+		var modifiedCourses = "";
+		for(i=0; i<courses.length; i++){
+			if(i>0){
+				modifiedCourses = modifiedCourses.concat(", "+courses[i]);
+			}else{
+			modifiedCourses = modifiedCourses.concat(courses[i]);}
+		}
     	var qs = photo.substring(0, photo.indexOf('?'));
-		res.render('profile', {name: name, photo:qs,courses:courses, status: status, groups: groups, time: time })
+		res.render('profile', {name: name, photo:qs,courses:modifiedCourses, status: status, groups: groups, time: time })
 	});
 	
 	if(req.user.courses==""){
