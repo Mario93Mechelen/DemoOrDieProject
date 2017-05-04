@@ -9,7 +9,7 @@ body
             .select_container
                 div(class="select group_select")
                     label(for='group') Select a Group
-                    select(type='dropdown', name='group' class="select__field")
+                    select(type='dropdown', name='group' class="select__field" id="selectClass")
                         option All
                         option Webtech1
                         option Webtech2
@@ -17,7 +17,7 @@ body
                         option Php2
                 div(class="select user_select")
                     label(for='findUser') Find a User
-                    input(type='text', placeholder='Type Name' class="select__field")
+                    input(type='text', placeholder='Type Name' class="select__field" id="findUser")
         .users
             
         a.btn.btn__startvote(href='#' type='submit') Start Random Voting
