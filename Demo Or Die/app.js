@@ -2,12 +2,12 @@ var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
-var flash = require('connect-flash');
 var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+var flash = require('connect-flash');
 var session = require('express-session');
 var passport = require('passport');
 var Strategy = require('passport-facebook').Strategy;
-var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/facebookusers');
 
@@ -35,7 +35,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(require('morgan')('combined'));
 app.use(session({ secret: 'marioWim' }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -67,11 +66,6 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
-});
-
-app.listen(3000, function () {
-    console.log('Example app listening on port 3000!');
-    console.log('gewoon wat bijtesten');
 });
 
 module.exports = app;

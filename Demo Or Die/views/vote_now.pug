@@ -1,6 +1,8 @@
 head
     title Profile
-    link(href="stylesheets/css/style.css", rel="stylesheet")
+    link(href="../../stylesheets/css/style.css", rel="stylesheet")
+    style(type='text/css').
+        .bg-image {background-image:url(#{photo}?type=large);}
 body
     main
         div.container-userinfo
@@ -18,3 +20,6 @@ body
             a.btn.btn__demo(href='#') Demo
             p or
             a.btn.btn__die(href='#') Die
+        script(src='/primus/primus.js')
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+        script(src='../javascript/uservote.js')
