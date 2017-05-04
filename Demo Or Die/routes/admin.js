@@ -18,16 +18,22 @@ router.get('/users', function(req, res, next) {
 });
 
 router.post('/users', function(req, res, next){
-var course = req.body.option;
-if (course=='All'){
-Account.find({role:'Student'}, function(err,result){
-	res.send(result);
-});	
-}else{
-Account.find({courses:course}, function(err,result){
-	res.send(result);
-});
-}
+    console.log(req.body);
+   /* var partName = req.body.partName;
+    if (partName == "") { */
+        /*var course = req.body.option;
+        if (course=='All'){
+        Account.find({role:'Student'}, function(err,result){
+            res.send(result);
+        });	
+        }else{
+        Account.find({courses:course}, function(err,result){
+            res.send(result);
+        });
+        }*/
+   /* } else {
+        res.send(req.body.option, req.body.partName);
+    }*/
 });
 
 router.get('/profile/:id', function(req, res, next){
