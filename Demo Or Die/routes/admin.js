@@ -17,11 +17,11 @@ router.get('/users', function(req, res, next) {
     res.render('users');
 });
 
-router.post('/users', function(req, res, next){
-    console.log(req.body);
-   /* var partName = req.body.partName;
-    if (partName == "") { */
-        /*var course = req.body.option;
+router.post('/users', function(req, res, next){ 
+		var partName = req.body.partName;
+		var course = req.body.option2;
+		if(partName==undefined){
+		var course = req.body.option;
         if (course=='All'){
         Account.find({role:'Student'}, function(err,result){
             res.send(result);
@@ -30,10 +30,20 @@ router.post('/users', function(req, res, next){
         Account.find({courses:course}, function(err,result){
             res.send(result);
         });
-        }*/
-   /* } else {
-        res.send(req.body.option, req.body.partName);
-    }*/
+        }
+		}else{
+			if (course=='All'){
+        Account.find({role:'Student',name:new RegExp(".*"+partName+".*")}, function(err,result){
+            res.send(result);
+        });	
+        }else{
+        Account.find({courses:course, name:new RegExp(".*"+partName+".*")}, function(err,result){
+            res.send(result);
+        });
+        }
+		}
+		
+   	
 });
 
 router.get('/profile/:id', function(req, res, next){
