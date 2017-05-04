@@ -28,7 +28,7 @@ gulp.task('imagemin', function() {
 //nodemon aanzetten
 gulp.task('nodemon', function () {
   nodemon({
-    script: 'app.js'
+    script: 'bin/www'
   , ext: 'js'
   , env: { 'NODE_ENV': 'development' }
   })
@@ -40,6 +40,9 @@ gulp.task('watch', function() {
     gulp.watch('./public/images/src/**/*.*', ['imagemin']),
     gulp.watch('./**.js', ['nodemon']);
 })
+
+//mongodb aanzetten
+
 
 //eerst alle taken al eens runnen en watch dan opzetten
 gulp.task('default', ['sass','imagemin','nodemon','watch']);

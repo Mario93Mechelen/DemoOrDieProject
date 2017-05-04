@@ -20,6 +20,10 @@ router.get('/users', function(req, res, next) {
 router.post('/users', function(req, res, next){ 
 		var partName = req.body.partName;
 		var course = req.body.option2;
+		var firstletter = partName.charAt(0);
+		var uppercaseletter = firstletter.toUpperCase();
+		var cutName = partName.substr(1,partName.length-1);
+		var newName = uppercaseletter.concat(cutName);
 		if(partName==undefined){
 		var course = req.body.option;
         if (course=='All'){
@@ -33,11 +37,11 @@ router.post('/users', function(req, res, next){
         }
 		}else{
 			if (course=='All'){
-        Account.find({role:'Student',name:new RegExp(".*"+partName+".*")}, function(err,result){
+        Account.find({role:'Student',name:{$in:[new RegExp(".*"+partName+".*"),new RegExp(".*"+newName+".*")]}}, function(err,result){
             res.send(result);
         });	
         }else{
-        Account.find({courses:course, name:new RegExp(".*"+partName+".*")}, function(err,result){
+        Account.find({courses:course,name:{$in:[new RegExp(".*"+partName+".*"),new RegExp(".*"+newName+".*")]}}, function(err,result){
             res.send(result);
         });
         }
