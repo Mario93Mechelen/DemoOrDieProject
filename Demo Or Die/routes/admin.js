@@ -24,7 +24,7 @@ router.post('/users', function(req, res, next){
 		var uppercaseletter = firstletter.toUpperCase();
 		var cutName = partName.substr(1,partName.length-1);
 		var newName = uppercaseletter.concat(cutName);
-		if(partName==undefined){
+		if( partName==undefined || partName==""){
 		var course = req.body.option;
         if (course=='All'){
         Account.find({role:'Student'}, function(err,result){
