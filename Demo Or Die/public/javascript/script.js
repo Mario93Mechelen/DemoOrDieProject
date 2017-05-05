@@ -2,7 +2,6 @@ $(document).ready(function(){
     
     var option = $('#selectClass option:selected').val();
     var partName = $('#findUser').val();
-    alert(option);
     $.ajax({
             type: "POST",
             url: "http://localhost:3000/admin/users",
