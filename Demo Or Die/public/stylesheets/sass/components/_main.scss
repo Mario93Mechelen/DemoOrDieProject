@@ -1,9 +1,21 @@
 main {
-	width:300px;
-	height:500px;
 	background-color: transparent;
 	position:relative;
 	font-family: "Gill Sans MT", sans-serif;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    //align-items: center;
+    align-content: space-around;
+	background-color: transparent;
+    height: 100vh;
+    width: 50%;
+    min-width: 250px;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 .title {
@@ -11,13 +23,15 @@ main {
 	text-transform: uppercase;
 	font-size: 2.5em;
 	text-align: center;
-	width: 40%;
-	margin: 0 auto;
+	width: 100vh;
+    height: 2em;
+	//margin: 0 auto;
 }
 
 .title__login {
-	padding-top: 200px;
-	text-shadow: 2px 2px darken($offwhite, 30%), 4px 4px darken($offwhite, 60%);
+	text-shadow: 2px 2px darken($offwhite, 30%), 4px 4px darken($offwhite, 60%); 
+    width: 3em;
+    margin: 0 auto;
 }
 
 .container-userinfo {

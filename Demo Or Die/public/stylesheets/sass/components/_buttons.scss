@@ -3,9 +3,9 @@
 	background-color: darken($lightgrey, 30%);
 	color:lighten($lightgrey, 40%);
 	border-radius: 5px;
-	display: block;
+	//display: block;
 	padding:0.7em 0em;
-	bottom: 20px;
+	//bottom: 20px;
 	text-shadow:1px 1px $lightgrey;
 	text-decoration:none;
 	text-align: center;
@@ -18,8 +18,10 @@
 }
 
 .btn__login {
-	margin: 100px auto 0 auto;
-	width: 260px;
+	//margin: 100px auto 0 auto;
+	//width: 260px;
+    padding: 1em;
+    width: 100%;
 }
 
 .groups__form--submit {
