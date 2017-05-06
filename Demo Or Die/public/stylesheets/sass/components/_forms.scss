@@ -7,32 +7,51 @@
 }
 
 .form {
-  width: 210px;
-  height: 300px;
+  width: 50%;
+  min-width: 200px;
+  max-width: 400px;  
+  height: 50%;
+    min-height: 250px;
+    max-height: 300px;
   @include alpha-attribute('background-color', rgba($offwhite, 0.8), white);
   border-radius: 10px;
   padding: 20px;
 }
 
+.groups {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
 .groups__form {
-  position: absolute;
-  left: 25px;
-  top: 100px;
+    display: flex;
+    flex-direction: column;
 }
 
 legend {
-  width: 210px;
-  color: darken($lightgrey, 40%);
-  font-size: 1.1em;
-  font-weight: bold;
-  text-align: center;
+    width: 210px;
+    color: darken($lightgrey, 40%);
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+    flex-grow: 1;
 }
 
 .form__options {
-  margin-top: 30px;
-  padding: 35px 10px;
-  border: 1px groove $lightgrey;
+    margin-top: 20px;
+    padding: 35px 10px;
+    border: 1px groove $lightgrey;
+    flex-grow: 4;
 }
+
+.groups__form--submit {
+    flex-grow: 0.5;
+}
+
 
 .form__options--input {
   color: $darkblue;

@@ -1,19 +1,21 @@
-head
-    title Log in
-    link(href="stylesheets/css/style.css", rel="stylesheet")
-body
-    main
-        HEAD
-        div(class="bg bg-lefttop")
-        div(class="bg bg-rightbottom")
-        .groups
-            form(class='form groups__form', method='POST')
-                legend Select your class groups
-                .form__options
-                    label.form__options--input
-                        input(type='radio', name='role', value='Student')
-                        | Student
-                    label.form__options--input
-                        input(type='radio', name='role', value='Teacher')
-                        | Teacher
-                input.btn.groups__form--submit(type='submit', value='Save role')
+html
+	head
+		title Roles
+		link(href='stylesheets/css/style.css', rel='stylesheet')
+	body
+		main
+			head
+			.bg.bg-lefttop
+			.bg.bg-rightbottom
+			.groups
+				form.form.groups__form(method='POST')
+					legend Select your role
+					.form__options
+						label.form__options--input
+							input(type='radio', name='role', value='Student')
+							| Student
+						label.form__options--input
+							input(type='radio', name='role', value='Teacher')
+							| Teacher
+					input.btn.groups__form--submit(type='submit', value='Save role')
+

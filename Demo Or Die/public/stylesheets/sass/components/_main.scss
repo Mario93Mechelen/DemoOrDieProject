@@ -2,19 +2,20 @@ main {
 	background-color: transparent;
 	position:relative;
 	font-family: "Gill Sans MT", sans-serif;
+    height: 100vh;
+    width: 100vw;
 }
 
 .content-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    //align-items: center;
     align-content: space-around;
 	background-color: transparent;
     height: 100vh;
     width: 50%;
     min-width: 250px;
-    max-width: 400px;
+    max-width: 600px;
     margin: 0 auto;
 }
 
@@ -25,7 +26,6 @@ main {
 	text-align: center;
 	width: 100vh;
     height: 2em;
-	//margin: 0 auto;
 }
 
 .title__login {
