@@ -10,7 +10,7 @@ var Account = new Schema({
 	die:Number,
 	vote:Boolean,
 	onStage:Boolean,
-	date:Date
+	date:String
 });
 
 module.exports = mongoose.model('Account', Account);

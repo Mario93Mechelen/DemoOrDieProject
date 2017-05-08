@@ -101,6 +101,11 @@ router.post('/endvoting/profile/:id', function(req, res, next){
 	var id = req.params.id;
 	var demo = parseInt(req.body.voteDemo);
 	var die = parseInt(req.body.voteDie);
+	var date = new Date();
+	var day = date.getDay();
+	var month = date.getMonth();
+	var year = date.getFullYear();
+	var newdate = day+"/"+month+"/"+year;
 	console.log(demo+", "+die);
 	if(req.body.vote=="demo"){
 		demo+=1;
@@ -109,7 +114,7 @@ router.post('/endvoting/profile/:id', function(req, res, next){
 		die+=1;
 	};
 	console.log(demo+", "+die);
-	Account.update({_id:id}, {$set:{demo:demo, die:die, onStage:true}}, function(err, result) {
+	Account.update({_id:id}, {$set:{demo:demo, die:die, onStage:true, date:newdate}}, function(err, result) {
     if (err)
         console.log(err);
 	});

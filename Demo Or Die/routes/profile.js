@@ -21,6 +21,10 @@ router.get('/:id', function(req, res, next) {
 		var photo = user.profilepic;
 		var courses = user.courses;
 		var modifiedCourses = "";
+		var date = user.date;
+		if (date==""){
+			date="You haven't been on stage yet";
+		}
 		for(i=0; i<courses.length; i++){
 			if(i>0){
 				modifiedCourses = modifiedCourses.concat(", "+courses[i]);
@@ -28,7 +32,7 @@ router.get('/:id', function(req, res, next) {
 			modifiedCourses = modifiedCourses.concat(courses[i]);}
 		}
     	var qs = photo.substring(0, photo.indexOf('?'));
-		res.render('profile', {name: name, photo:qs,courses:modifiedCourses, status: status, groups: groups, time: time })
+		res.render('profile', {name: name, photo:qs,courses:modifiedCourses, status: status, groups: groups, date: date })
 	});
 	
 	if(req.user.courses=="" && req.user.role=="Student"){
