@@ -18,6 +18,9 @@ router.get('/profile/:id', function(req, res, next) {
 		var name = user.name;
 		var photo = user.profilepic;
 		var courses = user.courses;
+		var demo = user.demo;
+		var die = user.die;
+		var vote = user.vote;
 		var modifiedCourses = "";
 		for(i=0; i<courses.length; i++){
 			if(i>0){
@@ -26,7 +29,7 @@ router.get('/profile/:id', function(req, res, next) {
 			modifiedCourses = modifiedCourses.concat(courses[i]);}
 		}
     	var qs = photo.substring(0, photo.indexOf('?'));
-		res.render('vote_now', {name: name, photo:qs, status: status, id:id})
+		res.render('vote_now', {name: name, photo:qs, status: status, id:id, demo:demo, die:die})
 	});
 });
 

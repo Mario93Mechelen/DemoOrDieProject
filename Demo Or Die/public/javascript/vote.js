@@ -12,12 +12,14 @@ primus.on("data", function(data) {
 	console.log(data)
 	});
 	$(".btn").on('click',function(){
-		var vote = $(this).attr('value');
+		var vote = $(this).attr('id');
 		var id = $(".id").attr('id');
+		var voteDemo = $("#demo").attr('value');
+		var voteDie = $("#die").attr('value');
 		$.ajax({
 			method:'post',
 			url:"http://localhost:3000/admin/endvoting/profile/"+id,
-			data:{vote:vote,id:id}
+			data:{vote:vote,id:id, voteDemo:voteDemo, voteDie: voteDie}
 		}).done(function(response){
 			if(response=="success"){
 				window.location.href = "http://localhost:3000/vote_result/"+id+"/"+vote;

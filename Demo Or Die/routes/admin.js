@@ -14,7 +14,17 @@ var time = "Some time";
 
 /* GET login page. */
 router.get('/users', function(req, res, next) {
-    res.render('users');
+    console.log('hier moet je alle users steeds controleren of resetten');
+	Account.count({onStage:false, role:'Student'}, function(err,result){
+		if(result==0){
+			Account.update({role:'Student'},{$set:{onStage:false}},{multi:true}, function(err, result){
+				if(err){
+					console.log(err);
+				}
+			})
+		}
+	});
+	res.render('users');
 });
 
 router.post('/users', function(req, res, next){ 
@@ -87,11 +97,11 @@ router.get('/endvoting/profile/:id', function(req, res, next){
 	});
 });
 
-var demo = 0;
-var die = 0;
-
 router.post('/endvoting/profile/:id', function(req, res, next){
 	var id = req.params.id;
+	var demo = parseInt(req.body.voteDemo);
+	var die = parseInt(req.body.voteDie);
+	console.log(demo+", "+die);
 	if(req.body.vote=="demo"){
 		demo+=1;
 	}
