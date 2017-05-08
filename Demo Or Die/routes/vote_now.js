@@ -26,7 +26,7 @@ router.get('/profile/:id', function(req, res, next) {
 			modifiedCourses = modifiedCourses.concat(courses[i]);}
 		}
     	var qs = photo.substring(0, photo.indexOf('?'));
-		res.render('vote_now', {name: name, photo:qs, status: status})
+		res.render('vote_now', {name: name, photo:qs, status: status, id:id})
 	});
 });
 

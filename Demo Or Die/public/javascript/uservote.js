@@ -6,9 +6,10 @@ primus = Primus.connect("", {
     , retries: 10 // Number: How many times we should try to reconnect.
   }
 });
-
-
 primus.on("data", function(data) {
+	console.log(data);
+	ids = data.message;
+	voteID = data.vote;
   if( data.message != undefined ) {
 	 for(i=0; i<data.message.length; i++){
       $.ajax({
@@ -22,5 +23,5 @@ primus.on("data", function(data) {
         });
 	 }
   }
-});
+});	
 })

@@ -12,8 +12,14 @@ primus.on("data", function(data) {
   console.log(data);
 });
 
-document.querySelector(".btn__endvote").addEventListener("click", function(e) {
-	console.log ("endvote toets geklikt en primus verstuurd");
+document.querySelector(".btn__startvote").addEventListener("click", function(e) {
+	var ids = [];
+	$('.users a.profileLink').each(function () {
+  		var href = $(this).attr('href');
+		ids.push(href);
+	});
+	var voteID = ids[Math.floor(Math.random()*ids.length)];
+    primus.write( {message:ids,vote:voteID} );
     e.preventDefault();
 });
 })

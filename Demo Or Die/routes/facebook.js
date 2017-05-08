@@ -25,7 +25,11 @@ function(accessToken, refreshToken, profile, done) {
           name: profile.displayName,
           profilepic:  "https://graph.facebook.com/" + profile.id + "/picture" + "?type=normal" + "&access_token=" + accessToken,
 			courses:"",
-			role:""
+			role:"",
+			demo:0,
+			die:0,
+			vote:false,
+			date:""
         });
         user.save(function(err) {
           if(err) {

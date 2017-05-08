@@ -5,7 +5,11 @@ var Account = new Schema({
 	name:String,
 	profilepic:String,
 	courses: Array,
-	role: String
+	role: String,
+	demo:Number,
+	die:Number,
+	vote:Boolean,
+	date:Date
 });
 
 module.exports = mongoose.model('Account', Account);

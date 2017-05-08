@@ -6,6 +6,7 @@ head
 body
     main
         div.container-userinfo
+            div(class="id" id=id style="display:none;")
             div(class="bg bg-image")
             div(class="bg bg-statusdie")
             div(class="bg bg-statusdemo")
@@ -17,9 +18,9 @@ body
                 span.right
                     p(class="info-user__name")= name
         div.container-vote-buttons
-            a.btn.btn__demo(href='#') Demo
+            a.btn.btn__demo(href='#' value="demo") Demo
             p or
-            a.btn.btn__die(href='#') Die
+            a.btn.btn__die(href='#' value="die") Die
         script(src='/primus/primus.js')
         script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
-        script(src='../javascript/uservote.js')
+        script(src='../../javascript/vote.js')

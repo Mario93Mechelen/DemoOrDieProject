@@ -87,6 +87,18 @@ router.get('/endvoting/profile/:id', function(req, res, next){
 	});
 });
 
+var demo = 0;
+var die = 0;
 
+router.post('/endvoting/profile/:id', function(req, res, next){
+	if(req.body.vote=="demo"){
+		demo+=1;
+	}
+	else{
+		die+=1;
+	};
+	console.log(demo+", "+die);
+	res.send('success');
+});
 
 module.exports = router;
