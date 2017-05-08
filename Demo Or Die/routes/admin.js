@@ -45,9 +45,9 @@ router.post('/users', function(req, res, next){
         });
         }
 		}
-		
    	
 });
+
 
 router.get('/profile/:id', function(req, res, next){
 	var id = req.params.id;
@@ -64,13 +64,27 @@ router.get('/profile/:id', function(req, res, next){
 			modifiedCourses = modifiedCourses.concat(courses[i]);}
 		}
     	var qs = photo.substring(0, photo.indexOf('?'));
-		res.render('profile', {name: name, photo:qs,courses:modifiedCourses, status: status, groups: groups, time: time });
+		res.render('profile', {name: name, photo:qs,courses:modifiedCourses, status: status,time: time });
 	});
 });
 
-router.get('/endvoting', function(req, res, next){
-	res.render('endvoting');
-	console.log(amount);
+router.get('/endvoting/profile/:id', function(req, res, next){
+	var id = req.params.id;
+	
+	Account.findOne({_id: id}, function(err,user){
+		var name = user.name;
+		var photo = user.profilepic;
+		var courses = user.courses;
+		var modifiedCourses = "";
+		for(i=0; i<courses.length; i++){
+			if(i>0){
+				modifiedCourses = modifiedCourses.concat(", "+courses[i]);
+			}else{
+			modifiedCourses = modifiedCourses.concat(courses[i]);}
+		}
+    	var qs = photo.substring(0, photo.indexOf('?'));
+		res.render('endvoting', {name: name, photo:qs,groups:modifiedCourses, status: status,time: time })
+	});
 });
 
 
