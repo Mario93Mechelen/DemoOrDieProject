@@ -92,7 +92,6 @@ var die = 0;
 
 router.post('/endvoting/profile/:id', function(req, res, next){
 	var id = req.params.id;
-	console.log(req.user);
 	if(req.body.vote=="demo"){
 		demo+=1;
 	}

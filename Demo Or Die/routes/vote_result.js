@@ -14,7 +14,8 @@ router.get('/:id/:vote', function(req, res, next) {
 	var id = req.params.id;
 	var vote = req.params.vote;
 	var status = "You voted "+vote;
-	console.log(req.user);
+	var userid = req.user._id;
+	console.log(userid);
 	Account.findOne({_id: id}, function(err,user){
 		var name = user.name;
 		var photo = user.profilepic;
@@ -28,6 +29,10 @@ router.get('/:id/:vote', function(req, res, next) {
 		}
     	var qs = photo.substring(0, photo.indexOf('?'));
 		res.render('vote_result', {name: name, status: status, photo:qs, vote:vote});
+	});
+	Account.update({_id:userid}, {$set:{vote:true}}, function(err, result) {
+	if(err)
+		console.log(err);
 	});
 });
 

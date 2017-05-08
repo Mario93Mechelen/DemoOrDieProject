@@ -14,7 +14,6 @@ primus.on("data", function(data) {
 	$(".btn").on('click',function(){
 		var vote = $(this).attr('value');
 		var id = $(".id").attr('id');
-		console.log(vote+", "+id);
 		$.ajax({
 			method:'post',
 			url:"http://localhost:3000/admin/endvoting/profile/"+id,
