@@ -86,6 +86,7 @@ router.get('/endvoting/profile/:id', function(req, res, next){
 		var photo = user.profilepic;
 		var courses = user.courses;
 		var modifiedCourses = "";
+		var date = "Now on stage";
 		for(i=0; i<courses.length; i++){
 			if(i>0){
 				modifiedCourses = modifiedCourses.concat(", "+courses[i]);
@@ -93,7 +94,7 @@ router.get('/endvoting/profile/:id', function(req, res, next){
 			modifiedCourses = modifiedCourses.concat(courses[i]);}
 		}
     	var qs = photo.substring(0, photo.indexOf('?'));
-		res.render('endvoting', {name: name, photo:qs,groups:modifiedCourses, status: status,time: time })
+		res.render('endvoting', {name: name, photo:qs,groups:modifiedCourses, status: status,date: date })
 	});
 });
 
