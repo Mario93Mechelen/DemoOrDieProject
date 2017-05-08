@@ -29,6 +29,7 @@ function(accessToken, refreshToken, profile, done) {
 			demo:0,
 			die:0,
 			vote:false,
+			onStage:false,
 			date:""
         });
         user.save(function(err) {

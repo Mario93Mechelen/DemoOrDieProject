@@ -91,6 +91,8 @@ var demo = 0;
 var die = 0;
 
 router.post('/endvoting/profile/:id', function(req, res, next){
+	var id = req.params.id;
+	console.log(req.user);
 	if(req.body.vote=="demo"){
 		demo+=1;
 	}
@@ -98,6 +100,10 @@ router.post('/endvoting/profile/:id', function(req, res, next){
 		die+=1;
 	};
 	console.log(demo+", "+die);
+	Account.update({_id:id}, {$set:{demo:demo, die:die, onStage:true}}, function(err, result) {
+    if (err)
+        console.log(err);
+	});
 	res.send('success');
 });
 

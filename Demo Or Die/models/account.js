@@ -9,6 +9,7 @@ var Account = new Schema({
 	demo:Number,
 	die:Number,
 	vote:Boolean,
+	onStage:Boolean,
 	date:Date
 });
 
