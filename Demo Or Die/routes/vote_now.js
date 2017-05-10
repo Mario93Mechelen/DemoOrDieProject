@@ -31,6 +31,13 @@ router.get('/profile/:id', function(req, res, next) {
     	var qs = photo.substring(0, photo.indexOf('?'));
 		res.render('vote_now', {name: name, photo:qs, status: status, id:id, demo:demo, die:die})
 	});
+    console.log(req.user._id);
+    Account.findOne({_id: req.user._id}, function(err, user){
+        var vote = user.vote;
+        if (vote == true) {
+           res.redirect('vote_result/'+req.params.id);
+        }
+    });
 });
 
 module.exports = router;
