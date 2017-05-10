@@ -14,6 +14,9 @@ var time = "Some time";
 
 /* GET login page. */
 router.get('/users', function(req, res, next) {
+	if(req.user.role=='Student'){
+		res.redirect('/profile/'+req.user.id);
+	}
     console.log('hier moet je alle users steeds controleren of resetten');
 	Account.count({onStage:false, role:'Student'}, function(err,result){
 		if(result==0){
@@ -60,6 +63,9 @@ router.post('/users', function(req, res, next){
 
 
 router.get('/profile/:id', function(req, res, next){
+	if(req.user.role=='Student'){
+		res.redirect('/profile/'+req.user.id);
+	}
 	var id = req.params.id;
 	
 	Account.findOne({_id: id}, function(err,user){
@@ -79,6 +85,9 @@ router.get('/profile/:id', function(req, res, next){
 });
 
 router.get('/endvoting/profile/:id', function(req, res, next){
+	if(req.user.role=='Student'){
+		res.redirect('/profile/'+req.user.id);
+	}
 	var id = req.params.id;
 	
 	Account.findOne({_id: id}, function(err,user){
@@ -103,8 +112,8 @@ router.post('/endvoting/profile/:id', function(req, res, next){
 	var demo = parseInt(req.body.voteDemo);
 	var die = parseInt(req.body.voteDie);
 	var date = new Date();
-	var day = date.getDay();
-	var month = date.getMonth();
+	var day = date.getDay()+7;
+	var month = date.getMonth()+1;
 	var year = date.getFullYear();
 	var newdate = day+"/"+month+"/"+year;
 	console.log(demo+", "+die);

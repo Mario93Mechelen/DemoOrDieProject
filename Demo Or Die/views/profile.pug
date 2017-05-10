@@ -26,13 +26,11 @@ body
                     p(class="info-user date")= date
             div.info-user.info-rank
                 p.info
-                | Wow, you are at
-                span#percentageDemo xx
-                |     % demo and only
-                span#percentageDie xx
-                |     % die. You can bring up your ranking to
-                span#percentageDemoHigher xx
-                |     demo if you nail the next one!
+                | Wow, you are at 
+                span #{demo}
+                |     % demo and 
+                span #{die}
+                |     % die. You can bring up your ranking if you nail the next one!
         script(src='/primus/primus.js')
         script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
         script(src='../javascript/uservote.js')

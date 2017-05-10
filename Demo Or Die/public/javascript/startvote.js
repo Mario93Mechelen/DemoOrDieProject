@@ -13,20 +13,31 @@ primus.on("data", function(data) {
 });
 
 document.querySelector(".btn__startvote").addEventListener("click", function(e) {
+	var stageIds = [];
 	var ids = [];
 	$('.users a.profileLink').each(function () {
   		var href = $(this).attr('href');
 		var onStage = $(this).attr('value');
 		if(onStage=='false'){
-		ids.push(href);
+		stageIds.push(href);
+		console.log(href);
 		}
+		ids.push(href);
 	});
-	if (ids.length>1){
-	var voteID = ids[Math.floor(Math.random()*ids.length)];
+	console.log(stageIds);
+	if(stageIds.length>0){
+	if (stageIds.length>1){
+	var voteID = stageIds[Math.floor(Math.random()*stageIds.length)];
+		console.log(voteID);
+		primus.write( {message:ids,vote:voteID} );
 	}else{
-		voteID = ids[0];
+		voteID = stageIds[0];
+		primus.write( {message:ids,vote:voteID} );
 	}
-    primus.write( {message:ids,vote:voteID} );
+	}else{
+		$('.warning').append(`<p>This user has already done a demo or die session</p>`).slideDown();
+		voteID = 'Done';
+	}
     e.preventDefault();
 });
 })

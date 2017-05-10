@@ -11,6 +11,7 @@ var ids=[];
 primus.on("data", function(data) {
   console.log(data);
     $('.btn__endvote').on("click", function() {
+	window.location.href = "http://localhost:3000/admin/users";
     $.ajax({
         method: "post",
         url: "http://localhost:3000/endvoting",

@@ -10,7 +10,7 @@ primus.on("data", function(data) {
 	console.log(data);
 	ids = data.message;
 	voteID = data.vote;
-  if( data.message != undefined ) {
+  if( data.message != undefined && data.vote!='Done') {
 	 for(i=0; i<data.message.length; i++){
       $.ajax({
             type: "POST",

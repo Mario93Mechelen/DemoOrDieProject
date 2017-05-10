@@ -27,10 +27,8 @@ router.get('/:id', function(req, res, next) {
         var total = demo + die;
         var demoPercentage = demo / total * 100;
         var diePercentage = die / total *100;
-        
-        console.log(demo);
-        console.log(die);
-        console.log(total);
+        demoPercentage = Math.round(demoPercentage);
+		diePercentage = Math.round(diePercentage);
         
         if (demo == 0 && die == 0) {
             demoPercentage = 50;

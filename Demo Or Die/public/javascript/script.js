@@ -25,7 +25,7 @@ $(document).ready(function(){
             data: {option: option, partName: partName}
 		}).done(function(response){
             for(i=0; i<response.length; i++){
-				$('.users').append('<a class="profileLink" href="profile/'+response[i]._id+'"><div class="users__user" style="background-image:url('+response[i].profilepic+');" id="'+response[i]._id+'"></div>');
+				$('.users').append('<a class="profileLink" href="profile/'+response[i]._id+'" value="'+response[i].onStage+'"><div class="users__user" style="background-image:url('+response[i].profilepic+');" id="'+response[i]._id+'"></div>');
 			}
         });
 
@@ -44,7 +44,7 @@ $(document).ready(function(){
             data: {option: option, partName: partName}
 		}).done(function(response){
             for(i=0; i<response.length; i++){
-				$('.users').append('<a class="profileLink" href="profile/'+response[i]._id+'"><div class="users__user" style="background-image:url('+response[i].profilepic+');" id="'+response[i]._id+'"></div>');
+				$('.users').append('<a class="profileLink" href="profile/'+response[i]._id+'" value="'+response[i].onStage+'"><div class="users__user" style="background-image:url('+response[i].profilepic+');" id="'+response[i]._id+'"></div>');
 			}
         });
         
