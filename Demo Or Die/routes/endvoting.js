@@ -14,10 +14,9 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
-    Account.find({role:'Student'}, function(err,result){
-        res.send(result);
-    });	
-    Account.update({role:'Student'},{$set:{vote:false}},{multi:true}, function(err, result){
+	var id = req.user._id;
+    res.send(id);
+    Account.update({vote:true},{$set:{vote:false}},{multi:true}, function(err, result){
 				if(err){
 					console.log(err);
 				}

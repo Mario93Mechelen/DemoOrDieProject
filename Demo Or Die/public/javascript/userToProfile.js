@@ -6,21 +6,10 @@ primus = Primus.connect("", {
     , retries: 10 // Number: How many times we should try to reconnect.
   }
 });
-
-var ids=[];
 primus.on("data", function(data) {
-  console.log(data);
-    $('.btn__endvote').on("click", function() {
-    $.ajax({
-        method: "post",
-        url: "http://localhost:3000/endvoting",
-        data: {message:"hallo"}
-    }).done(function(response) {
-         primus.write( {message:response} );
-    })
-    });
-});
-
-
-    
+	if(data.message!=undefined){
+	var userid = data.message;
+	window.location.href = "http://localhost:3000/profile/"+data.message;
+	}
+});	
 })
