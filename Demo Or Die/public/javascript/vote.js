@@ -21,7 +21,10 @@ primus.on("data", function(data) {
 			url:"http://localhost:3000/admin/endvoting/profile/"+id,
 			data:{vote:vote,id:id, voteDemo:voteDemo, voteDie: voteDie}
 		}).done(function(response){
-			if(response=="success"){
+			if(response){
+				var demo = parseInt(response);
+				var die = 100 - demo;
+				primus.write( {demo:demo,die:die} );
 				window.location.href = "http://localhost:3000/vote_result/"+id+"/"+vote;
 			}
 		});

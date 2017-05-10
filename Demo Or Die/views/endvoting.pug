@@ -3,6 +3,8 @@ head
     link(href="../../../stylesheets/css/style.css", rel="stylesheet")
     style(type='text/css').
         .bg-image {background-image:url(#{photo}?type=large);}
+        .bg-statusdie {height:#{die}%;}
+        .bg-statusdemo {height:#{demo}%;}
 body
     main
         div.container-userinfo
@@ -10,7 +12,7 @@ body
             div(class="bg bg-statusdie")
             div(class="bg bg-statusdemo")
             h2(class="header header-name")= name
-            h1(class="header header-title")= status
+            h1(class="header header-title")= message
         div.container-demoinfo
             div.info-user.bold
                 span.left
@@ -18,7 +20,7 @@ body
                 span.left
                     p.info.info-demo Last time on stage
                 span.right
-                    p(class="info-user groups")= groups
+                    p(class="info-user groups")= courses
                 span.right
                     p(class="info-user date")= date
             div.info-user.info-progress
@@ -27,4 +29,4 @@ body
         script(src='/primus/primus.js')
         
         script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
-        script(src='../../../javascript/endvote.js')
+        script(src='http://localhost:3000/javascript/endvote.js')

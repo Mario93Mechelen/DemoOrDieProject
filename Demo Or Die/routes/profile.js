@@ -55,7 +55,7 @@ router.get('/:id', function(req, res, next) {
 			modifiedCourses = modifiedCourses.concat(courses[i]);}
 		}
     	var qs = photo.substring(0, photo.indexOf('?'));
-		res.render('profile', {name: name, photo:qs,courses:modifiedCourses, status: status, groups: groups, date: date, demo: demoPercentage, die: diePercentage, message: message })
+		res.render('profile', {name: name, photo:qs,courses:modifiedCourses,groups: groups, date: date, demo: demoPercentage, die: diePercentage, message: message })
 	});
 	
 	if(req.user.courses=="" && req.user.role=="Student"){

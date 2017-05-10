@@ -32,6 +32,7 @@
   opacity: 0.5;
   position: absolute;
   top: 0;
+  transition: all 0.5s ease-in-out;
 }
 
 .bg-statusdemo {
@@ -41,4 +42,5 @@
   opacity: 0.5;
   position: absolute;
   bottom: 0;
+  transition: all 0.5s ease-in-out;
 }
