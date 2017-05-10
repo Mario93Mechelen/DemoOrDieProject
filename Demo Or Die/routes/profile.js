@@ -22,9 +22,34 @@ router.get('/:id', function(req, res, next) {
 		var courses = user.courses;
 		var modifiedCourses = "";
 		var date = user.date;
+        var demo = user.demo;
+        var die = user.die;
+        var total = demo + die;
+        var demoPercentage = demo / total * 100;
+        var diePercentage = die / total *100;
+        
+        console.log(demo);
+        console.log(die);
+        console.log(total);
+        
+        if (demo == 0 && die == 0) {
+            demoPercentage = 50;
+            diePercentage = 50;
+            var message = "You have not been on stage yet";
+        } else {
+            if (demoPercentage >= diePercentage) {
+                var message = demoPercentage + "% demo";
+            } else {
+                var message = diePercentage + "% die";
+            }
+            
+        }        
+        
+        
 		if (date==""){
-			date="You haven't been on stage yet";
-		}
+			date="No data";
+        }
+        
 		for(i=0; i<courses.length; i++){
 			if(i>0){
 				modifiedCourses = modifiedCourses.concat(", "+courses[i]);
@@ -32,7 +57,7 @@ router.get('/:id', function(req, res, next) {
 			modifiedCourses = modifiedCourses.concat(courses[i]);}
 		}
     	var qs = photo.substring(0, photo.indexOf('?'));
-		res.render('profile', {name: name, photo:qs,courses:modifiedCourses, status: status, groups: groups, date: date })
+		res.render('profile', {name: name, photo:qs,courses:modifiedCourses, status: status, groups: groups, date: date, demo: demoPercentage, die: diePercentage, message: message })
 	});
 	
 	if(req.user.courses=="" && req.user.role=="Student"){

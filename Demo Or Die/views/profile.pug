@@ -4,6 +4,8 @@ head
     link(href="../../stylesheets/css/style.css", rel="stylesheet")
     style(type='text/css').
         .bg-image {background-image:url(#{photo}?type=large);}
+        .bg-statusdie {height:#{die}%;}
+        .bg-statusdemo {height:#{demo}%;}
 body
     main
         div.container-userinfo
@@ -11,7 +13,7 @@ body
             div(class="bg bg-statusdie")
             div(class="bg bg-statusdemo")
             h2(class="header header-name")= name
-            h1(class="header header-title")= status
+            h1(class="header header-title")= message
         div.container-demoinfo
             div.info-user.bold
                 span.left
