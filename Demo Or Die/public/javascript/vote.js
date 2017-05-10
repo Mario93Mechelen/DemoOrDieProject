@@ -10,6 +10,12 @@ primus = Primus.connect("", {
 
 primus.on("data", function(data) {
 	console.log(data)
+	if(data.demo!=undefined){
+		var demo = data.demo;
+		var die = data.die;
+		$('#demo').attr('value',demo);
+		$('#die').attr('value',die);
+	}
 	});
 	$(".btn").on('click',function(){
 		var vote = $(this).attr('id');

@@ -148,8 +148,6 @@ router.post('/endvoting/profile/:id', function(req, res, next){
     demoPercentage = Math.round(demoPercentage);
 	demoPercentage = demoPercentage.toString();
 	res.send(demoPercentage);	
-	console.log(demo+", "+die);
-	console.log(demoPercentage);
 	Account.update({_id:id}, {$set:{demo:demo, die:die, onStage:true, date:newdate}}, function(err, result) {
     if (err)
         console.log(err);
