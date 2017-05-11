@@ -15,33 +15,20 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req,res){
 	var role = req.body.role;
 	if(role=='Teacher'){
-	var prompt = require('prompt');
+	var password = req.body.password;
  
-  // 
-  // Start the prompt 
-  // 
-  prompt.start();
- 
-  // 
-  // Get two properties from the user: username and email 
-  // 
-  prompt.get(['password'], function (err, result) {
-    // 
-    // Log the results. 
-    // 
-    console.log('Command-line input received:');
-    console.log('  password: ' + result.password);
-	  if(result.password=='docent'){
+  
+	  if(password=='docent'){
 		  Account.update({name:req.user.name}, {$set:{role:role}}, function(err, result) {
     if (err)
         console.log(err);
-});
+		  });
 	res.redirect('/admin/users');
 	  }
 	  else{
 		  res.redirect('/roles');
 	  }
-	  })
+	
 
   }
 	else{

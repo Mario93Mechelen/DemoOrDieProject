@@ -50,6 +50,14 @@ $(document).ready(function(){
         
     });
     
+	$('input[type=radio][name=role]').on('change',function(){
+		var role = $(this).attr('value');
+		if(role=='Teacher'){
+			$('.password').slideDown();
+		}else{
+			$('.password').slideUp();
+		}
+	});
     
 });
 
