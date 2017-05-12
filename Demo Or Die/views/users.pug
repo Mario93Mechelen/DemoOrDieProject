@@ -1,0 +1,29 @@
+head
+    title Admin Users Overview
+    link(href="../stylesheets/css/style.css", rel="stylesheet")
+body
+    main
+        div(class="bg bg-lefttop")
+        div(class="bg bg-rightbottom")
+        form
+            .select_container
+                div(class="select group_select")
+                    label(for='group') Select a Group
+                    select(type='dropdown', name='group' class="select__field" id="selectClass")
+                        option All
+                        option Webtech1
+                        option Webtech2
+                        option Php1
+                        option Php2
+                div(class="select user_select")
+                    label(for='findUser') Find a User
+                    input(type='text', placeholder='Type Name' class="select__field" id="findUser")
+        .users
+        div(class="warning")    
+        a.btn.btn__startvote(href='#') Start Random Voting
+        script(src='/primus/primus.js')
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+        script(src='http://localhost:3000/javascript/script.js')
+        script(src='http://localhost:3000/javascript/startvote.js')
+        script(src='http://localhost:3000/javascript/admin_redirect.js')
+        
