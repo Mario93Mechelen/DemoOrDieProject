@@ -15,7 +15,7 @@ var time = "Some time";
 /* GET login page. */
 router.get('/users', function(req, res, next) {
 	if(req.user.role=='Student'){
-		res.redirect('/profile/'+req.user.id);
+		res.redirect('/profile/'+req.user._id);
 	}
     console.log('hier moet je alle users steeds controleren of resetten');
 	Account.count({onStage:false, role:'Student'}, function(err,result){
@@ -64,7 +64,7 @@ router.post('/users', function(req, res, next){
 
 router.get('/profile/:id', function(req, res, next){
 	if(req.user.role=='Student'){
-		res.redirect('/profile/'+req.user.id);
+		res.redirect('/profile/'+req.user._id);
 	}
 	var id = req.params.id;
 	
@@ -86,7 +86,7 @@ router.get('/profile/:id', function(req, res, next){
 
 router.get('/endvoting/profile/:id', function(req, res, next){
 	if(req.user.role=='Student'){
-		res.redirect('/profile/'+req.user.id);
+		res.redirect('/profile/'+req.user._id);
 	}
 	var id = req.params.id;
 	
