@@ -23,6 +23,38 @@
   border-left: 100vw solid transparent;
 }
 
+.bg-lefttop--animated {
+    -webkit-animation-name: square;
+    -webkit-animation-duration: 30s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: reverse;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-timing-function: ease-in-out;  
+}
+
+.bg-rightbottom--animated {
+    -webkit-animation-name: square2;
+    -webkit-animation-duration: 30s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: normal;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-timing-function: ease-in-out;  
+}
+
+@-webkit-keyframes square {
+    0% {background:$green_base}
+    30% {background:$red_base}
+    40% {background:$green_base}
+    70% {background:$red_base}
+}
+
+@-webkit-keyframes square2 {
+    0% {background:$red_base}
+    40% {background:$green_base}
+    50% {background:$red_base}
+    90% {background:$green_base}
+}
+
 
 .bg-image {
   //background-image: url("../../images/example_image.jpg");
