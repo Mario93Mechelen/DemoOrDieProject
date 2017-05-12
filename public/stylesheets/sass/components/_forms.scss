@@ -1,0 +1,88 @@
+@mixin alpha-attribute($attribute, $color, $background) {
+  $percent: alpha($color) * 100%;
+  $opaque: opacify($color, 1);
+  $solid-color: mix($opaque, $background, $percent);
+  #{$attribute}: $solid-color;
+  #{$attribute}: $color;
+}
+
+.form {
+  width: 210px;
+  height: 300px;
+  @include alpha-attribute('background-color', rgba($offwhite, 0.8), white);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.groups__form {
+  position: absolute;
+  left: 25px;
+  top: 100px;
+}
+
+legend {
+  width: 210px;
+  color: darken($lightgrey, 40%);
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.form__options {
+  margin-top: 30px;
+  padding: 35px 10px;
+  border: 1px groove $lightgrey;
+}
+
+.form__options--input {
+  color: $darkblue;
+  font-weight: bold;
+  font-size: 1.2em;
+  display: block;
+  width: 100%;
+}
+
+.select_container {
+  width: 80%;
+  margin: 0px auto;
+  display: flex;
+  color: $darkblue;
+  padding: 10px;
+  @include alpha-attribute('background-color', rgba($offwhite, 0.8), white);
+}
+
+.select {
+  display: block;
+  width: 50%;
+  flex: 1 1;
+}
+
+.select__field {
+  width: 80%;
+  height: 35px;
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.users {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: flex-start;
+  align-items: flex-start;
+  width: 80%;
+  height: 300px;
+  padding: 10px;
+  margin: 0 auto 20px auto;
+  @include alpha-attribute('background-color', rgba($offwhite, 0.8), white);
+}
+
+.users__user {
+  background-image: url("../../images/example_image.jpg");
+  background-size: contain;
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
+  margin: 5px;
+}
+
