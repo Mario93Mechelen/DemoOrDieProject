@@ -47,6 +47,19 @@
     color: darken($lightgrey, 30%);
 }
 
+.btn__startvote {
+	width: 260px;
+	margin: 0 auto;
+}
+
+.btn__endvote {
+    height: 20px;
+	width: 50vw;
+    max-width: 350px;
+    min-width: 250px;
+	margin-bottom: 30px;
+}
+
 .btn__demo {
 	background-color: $green_base;
     display: block;
