@@ -18,6 +18,8 @@
 
 .btn__login {
     width: 80%;
+    min-width: 200px;
+    transform: translateY(-50px);
 }
 
 .roles__form--submit, .groups__form--submit {
