@@ -1,0 +1,16 @@
+.btn
+{
+	background-color: darken($lightgrey, 30%);
+	color: lighten($lightgrey, 40%);
+	border-radius: 5px;
+	padding: 0.7em 0em;
+	text-shadow: 1px 1px $lightgrey;
+	text-decoration: none;
+	text-align: center;
+	transition: all 0.3s ease-in-out;
+}
+
+.btn__login {
+    width: 80%;
+    
+}

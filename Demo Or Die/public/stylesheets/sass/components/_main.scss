@@ -1,4 +1,34 @@
+main {
+	background-color: transparent;
+	position:relative;
+	font-family: "Gill Sans MT", sans-serif;
+    height: 100vh;
+    width: 100vw;
+}
 
+.content-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 100vh;
+    min-height: 260px;
+    width: 50vw;
+    max-width: 440px;
+    margin-left: 25vw;
+    justify-content: center;
+    align-items: center;
+}
 
+.title {
+	color: $offwhite;
+	text-transform: uppercase;
+	font-size: 2.5em;
+	text-align: center;
+	width: 100vh;
+    height: 2em;
+}
 
-
+.title__login {
+	text-shadow: 2px 2px darken($offwhite, 30%), 4px 4px darken($offwhite, 60%); 
+    width: 3em;
+}
