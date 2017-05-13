@@ -91,6 +91,17 @@ main {
     padding-left: 2%;
 }
 
+.info-user-upper2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 25%;
+    width: 95%;
+    padding-top: 10px;
+    padding-left: 2%;
+}
+
 .left {
     width: 28%;
     height: 50%;
@@ -101,10 +112,6 @@ main {
     height: 50%;
     font-weight: bold;
     text-align: right;
-}
-
-.info-user__name {
-	margin-top: 50px;
 }
 
 .info-rank {

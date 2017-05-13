@@ -30,3 +30,31 @@
     max-width: 350px;
     min-width: 250px;
 }
+
+.container-vote-buttons {
+	border-top: 1px groove darken($lightgrey, 30%);
+    padding-top: 10px;
+	text-align: center;
+    width: 50vw;
+    max-width: 350px;
+    min-width: 250px;
+    height: 150px;    
+}
+
+.container-vote-buttons p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: darken($lightgrey, 30%);
+}
+
+.btn__demo {
+	background-color: $green_base;
+    display: block;
+    width: 100%;
+}
+
+.btn__die {
+	background-color: $red_base;
+    display: block;
+    width: 100%;
+}
