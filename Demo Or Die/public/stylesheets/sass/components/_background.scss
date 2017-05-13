@@ -1,6 +1,26 @@
 .bg-container {
 }
 
+.bg-container-profile, .bg-container-data, .container-demoinfo {
+    width: 50vw;
+    height: 50vw;
+    max-width: 350px;
+    min-width: 250px;
+    max-height: 350px;
+    min-height: 250px;
+    margin: 0 auto;
+}
+
+.container-demoinfo {
+    min-height: 100px;
+    max-height: 200px;
+}
+
+.bg-container-data {
+    position: relative;
+    margin-top: -100%;
+}
+
 .bg-lefttop {
   position: absolute;
   z-index: -1;
@@ -17,4 +37,30 @@
   height: 0;
   border-bottom: 100vh solid $red_base;
   border-left: 100vw solid transparent;
+}
+
+.bg-image {
+  background-size: cover;
+  filter: grayscale(1);
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.bg-statusdie {
+  background-color: $red_base;
+  height: 25%;
+  width: 100%;
+  opacity: 0.5;
+  position: relative;
+  top: -100%;
+}
+
+.bg-statusdemo {
+  background-color: $green_base;
+  height: 75%;
+  width: 100%;
+  opacity: 0.5;
+  position: relative;
+  bottom: 100%;
 }

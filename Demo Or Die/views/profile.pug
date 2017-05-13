@@ -8,31 +8,34 @@ head
         .bg-statusdemo {height:#{demo}%;}
 body
     main
-        div.container-userinfo
-            div(class='bg bg-image')
-            div(class="bg bg-statusdie")
-            div(class="bg bg-statusdemo")
-            h2(class="header header-name")= name
-            h1(class="header header-title")= message
-        div.container-demoinfo
-            div.info-user.bold
-                span.left
-                    p.info.info-demo In groups
-                span.left
-                    p.info.info-demo Last time on stage
-                span.right
-                    p(class="info-user groups")= courses
-                span.right
-                    p(class="info-user date")= date
-            div.info-user.info-rank
-                p.info
-                | Wow, you are at 
-                span #{demo}
-                |     % demo and 
-                span #{die}
-                |     % die. You can bring up your ranking if you nail the next one!
-        a.btn.btn__courses(href='/groups') Change courses
-        script(src='/primus/primus.js')
+        div.profile
+            div.container-userinfo
+                div.bg-container-profile
+                    div(class='bg bg-image')
+                    div(class="bg bg-statusdie")
+                    div(class="bg bg-statusdemo")
+                div.bg-container-data
+                    h2(class="header header-name")= name
+                    h1(class="header header-title")= message
+            div.container-demoinfo
+                div.info-user.info-user-upper
+                    span.grid.left
+                        p.info.info-demo In groups
+                    span.grid.left
+                        p.info.info-demo Last time on stage
+                    span.grid.right
+                        p(class="info-user groups")= courses
+                    span.grid.right
+                        p(class="info-user date")= date
+                div.info-user.info-rank
+                    p.info
+                    | Wow, you are at 
+                    span #{demo}
+                    |     % demo and 
+                    span #{die}
+                    |     % die. You can bring up your ranking if you nail the next one!
+            a.btn.btn__courses(href='/groups') Change courses
+            script(src='/primus/primus.js')
         script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
         script(src='http://localhost:3000/javascript/uservote.js')
         
