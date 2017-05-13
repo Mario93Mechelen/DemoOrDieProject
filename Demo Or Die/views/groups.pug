@@ -3,23 +3,24 @@ head
     link(href="stylesheets/css/style.css", rel="stylesheet")
 body
     main
-        HEAD
-        div(class="bg bg-lefttop")
-        div(class="bg bg-rightbottom")
-        .groups
-            form(class='form groups__form', method='POST')
-                legend Select your class groups
-                .form__options
-                    label.form__options--input
-                        input(type='checkbox', name='group', value='Webtech1')
-                        | Webtech1
-                    label.form__options--input
-                        input(type='checkbox', name='group', value='Webtech2')
-                        | Webtech2
-                    label.form__options--input
-                        input(type='checkbox', name='group', value='Php1')
-                        | PHP1
-                    label.form__options--input
-                        input(type='checkbox', name='group', value='Php2')
-                        | PHP2
-                input.btn.groups__form--submit(type='submit', value='Save groups')
+        div.bg-container
+            div(class="bg bg-lefttop")
+            div(class="bg bg-rightbottom")
+        div.content-container
+            .groups
+                form(class='form groups__form', method='POST')
+                    legend Select your class groups
+                    .form__options
+                        label.form__options--input
+                            input(type='checkbox', name='group', value='Webtech1')
+                            | Webtech1
+                        label.form__options--input
+                            input(type='checkbox', name='group', value='Webtech2')
+                            | Webtech2
+                        label.form__options--input
+                            input(type='checkbox', name='group', value='Php1')
+                            | PHP1
+                        label.form__options--input
+                            input(type='checkbox', name='group', value='Php2')
+                            | PHP2
+                    input.btn.groups__form--submit(type='submit', value='Save groups')
