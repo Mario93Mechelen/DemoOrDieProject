@@ -10,7 +10,17 @@
 	transition: all 0.3s ease-in-out;
 }
 
+.btn:hover
+{
+	background-color: darken($lightgrey, 50%);
+}
+
+
 .btn__login {
     width: 80%;
-    
+}
+
+.groups__form--submit {
+	width: 100%;
+    max-width: 200px;
 }
