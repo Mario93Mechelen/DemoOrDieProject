@@ -72,6 +72,32 @@ router.get('/profile/:id', function(req, res, next){
 		var name = user.name;
 		var photo = user.profilepic;
 		var courses = user.courses;
+		var date = user.date;
+        var demo = user.demo;
+        var die = user.die;
+        var total = demo + die;
+        var demoPercentage = demo / total * 100;
+        var diePercentage = die / total *100;
+        demoPercentage = Math.round(demoPercentage);
+		diePercentage = Math.round(diePercentage);
+        
+        if (demo == 0 && die == 0) {
+            demoPercentage = 50;
+            diePercentage = 50;
+            var message = "You have not been on stage yet";
+        } else {
+            if (demoPercentage >= diePercentage) {
+                var message = demoPercentage + "% demo";
+            } else {
+                var message = diePercentage + "% die";
+            }
+            
+        }        
+        
+        
+		if (date==""){
+			date="No data";
+        }
 		var modifiedCourses = "";
 		for(i=0; i<courses.length; i++){
 			if(i>0){
@@ -80,7 +106,7 @@ router.get('/profile/:id', function(req, res, next){
 			modifiedCourses = modifiedCourses.concat(courses[i]);}
 		}
     	var qs = photo.substring(0, photo.indexOf('?'));
-		res.render('profile', {name: name, photo:qs,courses:modifiedCourses, status: status,time: time });
+		res.render('profile', {name: name, photo:qs,courses:modifiedCourses,groups: groups, date: date, demo: demoPercentage, die: diePercentage, message: message });
 	});
 });
 
