@@ -80,22 +80,14 @@ $(document).ready(function(){
             url: "/admin/users",
             data: {option: option, partName: partName}
 		}).done(function(response){
-		var second = 1;
-		for(i=0; i<response.length; i++){
-		var firstInArr = response[i];
-		var secondInArr = response[i+1];
-			if(firstInArr.name>secondInArr.name){
-				response[i] = secondInArr;
-				response[i+1] = firstInArr
-			}else{
-				response[i]=firstInArr;
-				response[i+1]=secondInArr;
-			}
-			second++;
-			if(second==response.length){
-				break;
-			}
-		}
+		//This will sort your array
+        function SortByName(a, b){
+          var aName = a.name.toLowerCase();
+          var bName = b.name.toLowerCase(); 
+          return ((aName < bName) ? -1 : ((aName > bName) ? 1 : 0));
+        }
+
+        response.sort(SortByName);
 		$('.profileLink').remove();
 		$('.users__user').remove();
 		console.log(response);
@@ -114,25 +106,14 @@ $(document).ready(function(){
             url: "/admin/users",
             data: {option: option, partName: partName}
 		}).done(function(response){
-		var second = 1;
-		for(i=0; i<response.length; i++){
-		var firstInArr = response[i];
-		var secondInArr = response[i+1];
-		var firstQuota = firstInArr.demo/(firstInArr.demo+firstInArr.die);
-		var secondQuota = secondInArr.demo/(secondInArr.demo+secondInArr.die);
-			console.log(firstQuota, secondQuota);
-			if(firstQuota>secondQuota){
-				response[i] = secondInArr;
-				response[i+1] = firstInArr
-			}else{
-				response[i]=firstInArr;
-				response[i+1]=secondInArr;
-			}
-			second++;
-			if(second==response.length){
-				break;
-			}
-		}
+		//This will sort your array
+        function SortByScore(a, b){
+          var aScore = a.demo/(a.demo+a.die);
+          var bScore = b.demo/(b.demo+b.die);
+          return ((aScore > bScore) ? -1 : ((aScore < bScore) ? 1 : 0));
+        }
+
+        response.sort(SortByScore);
 		$('.profileLink').remove();
 		$('.users__user').remove();
 		console.log(response);
