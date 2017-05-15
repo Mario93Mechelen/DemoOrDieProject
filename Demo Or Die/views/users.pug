@@ -20,10 +20,12 @@ body
                         input(type='text', placeholder='Type Name' class="select__field" id="findUser")
                     div(class='select change_courses')
                         a(href='/addcourse' class='btn btn__modify') Modify courses
+            button(class='btn btn__sort') Sort by name
+            button(class='btn btn__sortscore') Sort by score
             .users
             div(class="warning")    
             a.btn.btn__startvote(href='#') Start Random Voting
-            script(src='/primus/primus.js')
+        script(src='/primus/primus.js')
         script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
         script(src='http://localhost:3000/javascript/script.js')
         script(src='http://localhost:3000/javascript/startvote.js')
