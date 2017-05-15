@@ -12,6 +12,7 @@ var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/facebookusers');
 
 var facebook = require('./routes/facebook');
+var addcourse = require('./routes/addCourse');
 var users = require('./routes/users');
 var profile = require('./routes/profile');
 var login = require('./routes/login');
@@ -50,6 +51,7 @@ app.use('/auth/facebook', facebook);
 app.use('/groups', groups);
 app.use('/endvoting', endvoting);
 app.use('/roles',roles);
+app.use('/addcourse',addcourse);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

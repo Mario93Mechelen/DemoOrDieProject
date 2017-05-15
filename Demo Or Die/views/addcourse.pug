@@ -1,0 +1,24 @@
+head
+    title Log in
+    link(href="stylesheets/css/style.css", rel="stylesheet")
+body
+    main
+        div.bg-container
+            div(class="bg bg-lefttop")
+            div(class="bg bg-rightbottom")
+        div.content-container
+            a(class='btn' href='admin/users') Go back
+            .roles
+                div(class='existingCourses')
+                    each key in courses
+                         div(class='coursedelete')
+                             p #{key.course}
+                             button(class='btn btn_delete' id=key.course) X
+                form(class='form addcourse__form', method='POST')
+                    p Add a course
+                    .form__options
+                        label.form__options--input
+                            input(type='text', name='course')
+                    input.btn.roles__form--submit(type='submit', value='Save course')
+            script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+            script(src='http://localhost:3000/javascript/script.js')

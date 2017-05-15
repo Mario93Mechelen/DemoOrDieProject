@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const Account = require('../models/account');
+const Courses = require('../models/courses');
 var passport = require('passport');
 var Strategy = require('passport-facebook').Strategy;
 const mongoose = require('mongoose');
@@ -10,7 +11,9 @@ var flash = require('connect-flash');
 /* GET groups page. */
 router.get('/', function(req, res, next) {
 	var username = req.user.name;
-    res.render('groups');
+	Courses.find(function(err,course){
+		    res.render('groups', {courses:course});
+	})
 });
 
 router.post('/', function(req,res){
@@ -19,7 +22,7 @@ router.post('/', function(req,res){
     if (err)
         console.log(err);
 });
-	res.redirect('/profile/'+req.user.id);
+	res.redirect('/profile/'+req.user._id);
 })
 
 module.exports = router;

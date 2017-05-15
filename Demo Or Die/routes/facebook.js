@@ -22,8 +22,8 @@ function(accessToken, refreshToken, profile, done) {
         done(null, user);
       } else {
         user = new Account({
-          name: profile.displayName,
-          profilepic:  "https://graph.facebook.com/" + profile.id + "/picture" + "?type=normal" + "&access_token=" + accessToken,
+            name: profile.displayName,
+            profilepic:  "https://graph.facebook.com/" + profile.id + "/picture" + "?type=normal" + "&access_token=" + accessToken,
 			courses:"",
 			role:"",
 			demo:0,

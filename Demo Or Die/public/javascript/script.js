@@ -58,6 +58,19 @@ $(document).ready(function(){
 			$('.password').slideUp();
 		}
 	});
+	
+	$('.btn_delete').on('click', function(){
+		var course = $(this).attr('id');
+		$.ajax({
+			method:'post',
+			url:'/addcourse',
+			data:{deletecourse:course}
+		}).done(function(response){
+			if(response=='success'){
+			window.location.href = "/addcourse";
+			}
+		});
+	})
     
 });
 
