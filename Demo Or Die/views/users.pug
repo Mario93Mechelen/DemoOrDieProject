@@ -18,10 +18,10 @@ body
                     div(class="select user_select")
                         label(for='findUser') Find a User
                         input(type='text', placeholder='Type Name' class="select__field" id="findUser")
-                    div(class='select change_courses')
-                        a(href='/addcourse' class='btn btn__modify') Modify courses
-            button(class='btn btn__sort') Sort by name
-            button(class='btn btn__sortscore') Sort by score
+            a(href='/addcourse' class='btn btn__modify-courses') Modify courses
+            div.sort_container
+                button(class='btn btn__sort') Sort by name
+                button(class='btn btn__sortscore') Sort by score
             .users
             div(class="warning")    
             a.btn.btn__startvote(href='#') Start Random Voting
