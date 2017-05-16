@@ -1,21 +1,24 @@
 $(document).ready(function(){
-primus = Primus.connect("", {
-  reconnect: {
-      max: Infinity // Number: The max delay before we try to reconnect.
-    , min: 500 // Number: The minimum delay before we try reconnect.
-    , retries: 10 // Number: How many times we should try to reconnect.
-  }
-});
+    primus = Primus.connect("", {
+      reconnect: {
+          max: Infinity // Number: The max delay before we try to reconnect.
+        , min: 500 // Number: The minimum delay before we try reconnect.
+        , retries: 10 // Number: How many times we should try to reconnect.
+      }
+    });
 
 
-primus.on("data", function(data) {
-	console.log(data)
+    primus.on("data", function(data) {
+	   console.log(data)
 	});
+    
 	$(".btn").on('click',function(){
+        
 		var vote = $(this).attr('id');
 		var id = $(".id").attr('id');
 		var voteDemo = $("#demo").attr('value');
 		var voteDie = $("#die").attr('value');
+        
 		$.ajax({
 			method:'post',
 			url:"/admin/endvoting/profile/"+id,
@@ -28,5 +31,7 @@ primus.on("data", function(data) {
 				window.location.href = "/vote_result/"+id+"/"+vote;
 			}
 		});
+        
 	});
+    
 });

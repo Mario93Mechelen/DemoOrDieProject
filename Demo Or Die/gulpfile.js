@@ -41,8 +41,5 @@ gulp.task('watch', function() {
     gulp.watch('./**.js', ['nodemon']);
 })
 
-//mongodb aanzetten
-
-
 //eerst alle taken al eens runnen en watch dan opzetten
 gulp.task('default', ['sass','imagemin','nodemon','watch']);

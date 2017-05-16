@@ -7,41 +7,56 @@ const passport = require('passport')
 const Account = require('../models/account');
 
 passport.use(new FacebookStrategy({
+    
     clientID: '130871407464517',
     clientSecret: 'c4367458a3bd8a64f5d1cd8346b3fbcb',
 	profileFields: ["id", "displayName", "gender", "first_name", "picture.type(large)", "last_name"],
     callbackURL: "http://localhost:3000/auth/facebook/callback"
-},
+    
+},                                  
 function(accessToken, refreshToken, profile, done) {
-    console.log(profile);
-    Account.findOne({ name: profile.displayName }, function(err, user) {
-      if(err) {
-        console.log(err);  // handle errors!
-      }
-      if (!err && user !== null) {
-        done(null, user);
-      } else {
-        user = new Account({
-            name: profile.displayName,
-            profilepic:  "https://graph.facebook.com/" + profile.id + "/picture" + "?type=normal" + "&access_token=" + accessToken,
-			courses:"",
-			role:"",
-			demo:0,
-			die:0,
-			vote:false,
-			onStage:false,
-			date:""
+    
+        console.log(profile);
+    
+        Account.findOne({ name: profile.displayName }, function(err, user) {
+            
+              if(err) {
+                console.log(err);  // handle errors!
+              }
+            
+              if (!err && user !== null) {
+                  
+                done(null, user);
+                  
+              } else {
+                  
+                user = new Account({
+                    name: profile.displayName,
+                    profilepic:  "https://graph.facebook.com/" + profile.id + "/picture" + "?type=normal" + "&access_token=" + accessToken,
+                    courses:"",
+                    role:"",
+                    demo:0,
+                    die:0,
+                    vote:false,
+                    onStage:false,
+                    date:""
+                });
+                  
+                user.save(function(err) {
+                    
+                      if(err) {
+
+                        console.log(err);  // handle errors!
+
+                      } else {
+
+                        console.log("saving user ..." + user);
+                        done(null, user); 
+
+                      }
+                });
+              }
         });
-        user.save(function(err) {
-          if(err) {
-            console.log(err);  // handle errors!
-          } else {
-            console.log("saving user ..." + user);
-            done(null, user);
-          }
-        });
-      }
-    });
    }
 ));
 
@@ -57,18 +72,23 @@ router.get('/', passport.authenticate('facebook'));
 
 router.get('/callback',
     passport.authenticate('facebook', { failureRedirect: '/login' }), function(req, res){
+    
       Account.findOne({ role: req.user.role }, function(err, user){
           if(err) {
             console.log(err);  // handle errors!
           }
           if (!err && user.role !== "") {
+              
 			  if(req.user.role=='Student'){
-            res.redirect('/profile/'+req.user.id);
-			  }else{
-				  res.redirect('/admin/users');
+                    res.redirect('/profile/'+req.user.id);
+			  } else {
+				    res.redirect('/admin/users');
 			  }
+              
           } else {
+              
             res.redirect('/roles')
+            
           }
       });  
 });

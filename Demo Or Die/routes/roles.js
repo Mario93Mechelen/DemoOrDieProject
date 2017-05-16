@@ -12,32 +12,36 @@ router.get('/', function(req, res, next) {
     res.render('roles');
 });
 
+// password logica voor leraar en doorsturen van leraar naar overzicht users of doorsturen van user naar selecteren courses
 router.post('/', function(req,res){
+    
 	var role = req.body.role;
+    
 	if(role=='Teacher'){
-	var password = req.body.password;
+	   var password = req.body.password;
  
   
-	  if(password=='docent'){
-		  Account.update({name:req.user.name}, {$set:{role:role}}, function(err, result) {
-    if (err)
-        console.log(err);
-		  });
-	res.redirect('/admin/users');
-	  }
-	  else{
+        if(password=='docent'){
+            Account.update({name:req.user.name}, {$set:{role:role}}, function(err, result) {
+                
+                if (err)
+                console.log(err);
+            });
+            res.redirect('/admin/users');
+            
+	  } else {
 		  res.redirect('/roles');
 	  }
-	
-
-  }
-	else{
+        
+    } else {
+        
 	Account.update({name:req.user.name}, {$set:{role:role}}, function(err, result) {
-    if (err)
-        console.log(err);
-});
-	res.redirect('/groups');
-}
+        if (err)
+            console.log(err);
+        });
+        res.redirect('/groups');
+    }
+    
 });
 
 module.exports = router;

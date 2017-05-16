@@ -17,7 +17,9 @@ router.get('/', function(req, res, next) {
 	})
 });
 
+//weghalen en toevoegen van courses
 router.post('/', function(req, res, next){
+    
 	if(req.body.deletecourse!=undefined){
 		var course = req.body.deletecourse;
         Courses.remove({course:course}, function(err,course){
@@ -25,19 +27,21 @@ router.post('/', function(req, res, next){
 				console.log(err)	
 		})
 		res.send('success');
-	}else{
-	var course = req.body.course;
-	course = new Courses({
-            course: course
+	} else {
+        
+        var course = req.body.course;
+        course = new Courses({
+                course: course
         });
+        
         course.save(function(err) {
-          if(err) {
-            console.log(err);  // handle errors!
-          } else {
-            console.log("savingcourse ..." + course);
-          }
+              if(err) {
+                    console.log(err);  // handle errors!
+              } else {
+                    console.log("savingcourse ..." + course);
+              }
         });
-		res.redirect('/addcourse');
+        res.redirect('/addcourse');
 	}
 });
 
