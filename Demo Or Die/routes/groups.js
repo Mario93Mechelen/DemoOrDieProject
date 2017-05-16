@@ -12,6 +12,9 @@ var flash = require('connect-flash');
 router.get('/', function(req, res, next) {
 	var username = req.user.name;
 	Courses.find(function(err,course){
+            if(err){
+				console.log(err)
+			}
 		    res.render('groups', {courses:course});
 	})
 });

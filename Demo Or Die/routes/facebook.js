@@ -7,8 +7,8 @@ const passport = require('passport')
 const Account = require('../models/account');
 
 passport.use(new FacebookStrategy({
-    clientID: '457359077938042',
-    clientSecret: '8bbf426ed099bcaa0841220cccdc7ad8',
+    clientID: '130871407464517',
+    clientSecret: 'c4367458a3bd8a64f5d1cd8346b3fbcb',
 	profileFields: ["id", "displayName", "gender", "first_name", "picture.type(large)", "last_name"],
     callbackURL: "http://localhost:3000/auth/facebook/callback"
 },

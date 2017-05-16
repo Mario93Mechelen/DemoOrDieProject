@@ -10,7 +10,7 @@ primus = Primus.connect("", {
 
 primus.on("data", function(data) {
   if( data.message != undefined ) {
-			window.location.href = "http://localhost:3000/admin/endvoting/"+data.vote;
+			window.location.href = "/admin/endvoting/"+data.vote;
 	 }
 });
 })

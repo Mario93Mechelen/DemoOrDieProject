@@ -14,11 +14,11 @@ primus.on("data", function(data) {
 	 for(i=0; i<data.message.length; i++){
       $.ajax({
             type: "POST",
-            url: "http://localhost:3000/"+data.message[i],
+            url: "/"+data.message[i],
             data: {message: "redirect"}
 		}).done(function(response){
             if(response=="success"){
-				window.location.href = "http://localhost:3000/vote_now/"+data.vote;
+				window.location.href = "/vote_now/"+data.vote;
 			}
         });
 	 }

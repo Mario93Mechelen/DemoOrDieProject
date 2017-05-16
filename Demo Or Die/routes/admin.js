@@ -14,6 +14,8 @@ router.get('/users', function(req, res, next) {
 	}
     console.log('hier moet je alle users steeds controleren of resetten');
 	Account.count({onStage:false, role:'Student'}, function(err,result){
+		if(err)
+			console.log(err);
 		if(result==0){
 			Account.update({role:'Student'},{$set:{onStage:false}},{multi:true}, function(err, result){
 				if(err){
@@ -23,34 +25,48 @@ router.get('/users', function(req, res, next) {
 		}
 	});
 	Courses.find(function(err,course){
+		if(err)
+			console.log(err);
 		res.render('users', {courses:course});	
 	})
 });
 
 router.post('/users', function(req, res, next){ 
-		var partName = req.body.partName;
 		var course = req.body.option;
-		var firstletter = partName.charAt(0);
-		var uppercaseletter = firstletter.toUpperCase();
-		var cutName = partName.substr(1,partName.length-1);
-		var newName = uppercaseletter.concat(cutName);
 		if( partName==undefined || partName==""){
         if (course=='All'){
         Account.find({role:'Student'}, function(err,result){
-            res.send(result);
+            if(err){
+				console.log(err)
+			}
+			res.send(result);
         });	
         }else{
         Account.find({courses:course}, function(err,result){
+            if(err){
+				console.log(err)
+			}			
             res.send(result);
         });
         }
 		}else{
+		var partName = req.body.partName;
+		var firstletter = partName.charAt(0);
+		var uppercaseletter = firstletter.toUpperCase();
+		var cutName = partName.substr(1,partName.length-1);
+		var newName = uppercaseletter.concat(cutName);
 			if (course=='All'){
         Account.find({role:'Student',name:{$in:[new RegExp(".*"+partName+".*"),new RegExp(".*"+newName+".*")]}}, function(err,result){
+            if(err){
+				console.log(err)
+			}
             res.send(result);
         });	
         }else{
         Account.find({courses:course,name:{$in:[new RegExp(".*"+partName+".*"),new RegExp(".*"+newName+".*")]}}, function(err,result){
+            if(err){
+				console.log(err)
+			}
             res.send(result);
         });
         }
@@ -66,6 +82,9 @@ router.get('/profile/:id', function(req, res, next){
 	var id = req.params.id;
 	
 	Account.findOne({_id: id}, function(err,user){
+            if(err){
+				console.log(err)
+			}
 		var name = user.name;
 		var photo = user.profilepic;
 		var courses = user.courses;
@@ -95,12 +114,14 @@ router.get('/profile/:id', function(req, res, next){
 		if (date==""){
 			date="No data";
         }
+		if(courses !=null){
 		var modifiedCourses = "";
 		for(i=0; i<courses.length; i++){
 			if(i>0){
 				modifiedCourses = modifiedCourses.concat(", "+courses[i]);
 			}else{
 			modifiedCourses = modifiedCourses.concat(courses[i]);}
+		}
 		}
     	var qs = photo.substring(0, photo.indexOf('?'));
 		res.render('profile', {name: name, photo:qs,courses:modifiedCourses, date: date, demo: demoPercentage, die: diePercentage, message: message });
@@ -114,6 +135,9 @@ router.get('/endvoting/profile/:id', function(req, res, next){
 	var id = req.params.id;
 	
 	Account.findOne({_id: id}, function(err,user){
+            if(err){
+				console.log(err)
+			}
 		var name = user.name;
 		var photo = user.profilepic;
 		var courses = user.courses;
@@ -139,11 +163,13 @@ router.get('/endvoting/profile/:id', function(req, res, next){
             }
             
         }
+		if(courses!=null){
 		for(i=0; i<courses.length; i++){
 			if(i>0){
 				modifiedCourses = modifiedCourses.concat(", "+courses[i]);
 			}else{
 			modifiedCourses = modifiedCourses.concat(courses[i]);}
+		}
 		}
     	var qs = photo.substring(0, photo.indexOf('?'));
 		res.render('endvoting', {name: name, photo:qs,courses:modifiedCourses, date: date, demo: demoPercentage, die: diePercentage, message: message })

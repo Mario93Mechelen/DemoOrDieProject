@@ -14,13 +14,14 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
-	var id = req.user._id;
-    res.send(id);
-    Account.update({vote:true},{$set:{vote:false}},{multi:true}, function(err, result){
+ if(req.body.user=="reset"){
+	     Account.update({vote:true},{$set:{vote:false}},{multi:true}, function(err, result){
 				if(err){
 					console.log(err);
 				}
+			 res.send(result);
 			});
+ }
 });
 
 module.exports = router;

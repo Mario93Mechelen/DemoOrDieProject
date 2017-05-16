@@ -11,14 +11,15 @@ var ids=[];
 primus.on("data", function(data) {
   console.log(data);
     $('.btn__endvote').on("click", function() {
-	window.location.href = "http://localhost:3000/admin/users";
-    $.ajax({
-        method: "post",
-        url: "http://localhost:3000/endvoting",
-        data: {message:"hallo"}
-    }).done(function(response) {
-         primus.write( {message:response} );
-    })
+	window.location.href = "/admin/users";
+         primus.write( {message:"redirectUser"} );
+	$.ajax({
+		method:'post',
+		url:'/endvoting',
+		data:{user:"reset"}
+	}).done(function(response){
+		console.log(response);
+	})
     });
 	
 	if(data.demo!=undefined){

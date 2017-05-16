@@ -7,9 +7,9 @@ primus = Primus.connect("", {
   }
 });
 primus.on("data", function(data) {
-	if(data.message!=undefined){
-	var userid = data.message;
-	window.location.href = "http://localhost:3000/profile/"+data.message;
+	if(data.message=="redirectUser"){
+	var id = $('.myID').attr('id');
+	window.location.href = "/profile/"+id;
 	}
 });	
 })

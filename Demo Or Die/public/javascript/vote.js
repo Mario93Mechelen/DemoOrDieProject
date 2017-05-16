@@ -10,12 +10,6 @@ primus = Primus.connect("", {
 
 primus.on("data", function(data) {
 	console.log(data)
-	if(data.demo!=undefined){
-		var demo = data.demo;
-		var die = data.die;
-		$('#demo').attr('value',demo);
-		$('#die').attr('value',die);
-	}
 	});
 	$(".btn").on('click',function(){
 		var vote = $(this).attr('id');
@@ -24,14 +18,14 @@ primus.on("data", function(data) {
 		var voteDie = $("#die").attr('value');
 		$.ajax({
 			method:'post',
-			url:"http://localhost:3000/admin/endvoting/profile/"+id,
+			url:"/admin/endvoting/profile/"+id,
 			data:{vote:vote,id:id, voteDemo:voteDemo, voteDie: voteDie}
 		}).done(function(response){
 			if(response){
 				var demo = parseInt(response);
 				var die = 100 - demo;
 				primus.write( {demo:demo,die:die} );
-				window.location.href = "http://localhost:3000/vote_result/"+id+"/"+vote;
+				window.location.href = "/vote_result/"+id+"/"+vote;
 			}
 		});
 	});

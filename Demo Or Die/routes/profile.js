@@ -17,6 +17,9 @@ router.get('/:id', function(req, res, next) {
 	var id = req.params.id;
 	
 	Account.findOne({_id: id}, function(err,user){
+            if(err){
+				console.log(err)
+			}
 		var name = user.name;
 		var photo = user.profilepic;
 		var courses = user.courses;
@@ -47,12 +50,13 @@ router.get('/:id', function(req, res, next) {
 		if (date==""){
 			date="No data";
         }
-        
+        if(courses!=null){
 		for(i=0; i<courses.length; i++){
 			if(i>0){
 				modifiedCourses = modifiedCourses.concat(", "+courses[i]);
 			}else{
 			modifiedCourses = modifiedCourses.concat(courses[i]);}
+		}
 		}
     	var qs = photo.substring(0, photo.indexOf('?'));
 		res.render('profile', {name: name, photo:qs,courses:modifiedCourses,groups: groups, date: date, demo: demoPercentage, die: diePercentage, message: message })
