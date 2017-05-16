@@ -1,3 +1,11 @@
+@mixin alpha-attribute($attribute, $color, $background) {
+  $percent: alpha($color) * 100%;
+  $opaque: opacify($color, 1);
+  $solid-color: mix($opaque, $background, $percent);
+  #{$attribute}: $solid-color;
+  #{$attribute}: $color;
+}
+
 main {
 	background-color: transparent;
 	position:relative;
@@ -123,23 +131,26 @@ main {
 
 .existingCourses
 {
-	display:flex;
-	flex-direction:column;
-	width:100%;
-	height:150px;
-	overflow:auto;
-	margin-bottom:20px;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	overflow: auto;
+	margin-bottom: 20px;
 }
 
 .coursedelete
 {
 	display:flex;
 	flex-direction: row;
-	margin-top:50px;
+    justify-content: space-between;
+    height: 40px;
 }
 .coursedelete p
 {
-	width:80%;
+	margin: auto 0;
+    padding: 0.2em;
+    width: 60%;
+    @include alpha-attribute('background-color', rgba($offwhite, 0.8), white);
 }
 
 .change_courses

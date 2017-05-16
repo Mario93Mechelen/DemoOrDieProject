@@ -124,3 +124,19 @@ input[type="password"] {
     color: darken($lightgrey, 40%);
     transform: translateY(90px);
 }
+
+.form__addcourse {
+    min-height: 100px;
+    max-height: 150px;
+}
+
+.form__addcourse legend {
+    flex: 0;
+}
+
+.addcourse--input {
+    background-color: transparent;
+    height: 3em;
+    width: 100%;
+    max-width: 200px;
+}

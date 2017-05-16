@@ -1,3 +1,11 @@
+@mixin alpha-attribute($attribute, $color, $background) {
+  $percent: alpha($color) * 100%;
+  $opaque: opacify($color, 1);
+  $solid-color: mix($opaque, $background, $percent);
+  #{$attribute}: $solid-color;
+  #{$attribute}: $color;
+}
+
 .btn
 {
 	background-color: darken($lightgrey, 30%);
@@ -22,7 +30,7 @@
     transform: translateY(-50px);
 }
 
-.roles__form--submit, .groups__form--submit {
+.roles__form--submit, .groups__form--submit, .addcourse__form--submit {
 	width: 100%;
     max-width: 200px;
 }
@@ -76,8 +84,16 @@
 
 .btn_delete
 {
-	width:10%;
-	padding:1em;
+    @include alpha-attribute('background-color', rgba($offwhite, 0.8), white);
+    color: $red_base;
+    width: 30px;
+    height: 30px;
+    margin: auto 0;
+	padding: 5px;
+}
+
+.btn_delete:hover {
+    @include alpha-attribute('background-color', rgba($offwhite, 0.5), white);
 }
 
 .btn__modify
@@ -121,3 +137,7 @@
     background-color: darken($green_base, 15%);
 }
 
+.btn__goback {
+    min-width: 225px;
+    width: 100%;
+}
