@@ -113,8 +113,14 @@ input[type="password"] {
 .users__user {
     background-image: url("../../images/example_image.jpg");
     background-size: contain;
-    width: 70px;
-    height: 70px;
-    border-radius: 50px;
-    margin: 5px;
+    width: 100px;
+    height: 100px;
+    border-radius: 25px;
+    margin: 20px;
+    line-height: 14px;
+}
+
+.users__user p {
+    color: darken($lightgrey, 40%);
+    transform: translateY(90px);
 }
