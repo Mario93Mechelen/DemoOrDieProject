@@ -22,6 +22,7 @@ router.post('/', function(req, res, next){
     
 	if(req.body.deletecourse!=undefined){
 		var course = req.body.deletecourse;
+        console.log(course);
         Courses.remove({course:course}, function(err,course){
 			if(err)	
 				console.log(err)	
@@ -29,7 +30,7 @@ router.post('/', function(req, res, next){
 		res.send('success');
 	} else {
         
-        var course = req.body.course;
+        var course = req.body.addcourse;
         course = new Courses({
                 course: course
         });

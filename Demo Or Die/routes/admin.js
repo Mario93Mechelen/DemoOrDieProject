@@ -38,11 +38,11 @@ router.get('/users', function(req, res, next) {
 
 // tonen van juiste users in het overzicht op basis van geselecteerde course en input van (deel van) de naam
 router.post('/users', function(req, res, next){ 
-    
+            var partName = req.body.partName;
 		var course = req.body.option;
     
 		if( partName==undefined || partName==""){
-            
+            console.log(partName);
             if (course=='All'){
                 
                 Account.find({role:'Student'}, function(err,result){
@@ -63,7 +63,6 @@ router.post('/users', function(req, res, next){
             }
 		} else {
             
-            var partName = req.body.partName;
             var firstletter = partName.charAt(0);
             var uppercaseletter = firstletter.toUpperCase();
             var cutName = partName.substr(1,partName.length-1);
