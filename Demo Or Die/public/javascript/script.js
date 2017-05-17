@@ -50,7 +50,7 @@ $(document).ready(function(){
         
         $.ajax({
             type: "POST",
-            url: "http://localhost:3000/admin/users",
+            url: "/admin/users",
             data: {option: option, partName: partName}
 		}).done(function(response){
             for(i=0; i<response.length; i++){

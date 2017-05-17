@@ -8,6 +8,11 @@ $(document).ready(function(){
     });
     
     primus.on("data", function(data) {
+			   console.log(data)
+   	if(data.update!=undefined && data.update=="update" && data.numdemo!=undefined && data.numdie!=undefined){
+	$('#demo').attr('value', data.numdemo);
+	$('#die').attr('value', data.numdie);
+	}
             if(data.message=="redirectUser"){
                 var id = $('.myID').attr('id');
                 window.location.href = "/profile/"+id;

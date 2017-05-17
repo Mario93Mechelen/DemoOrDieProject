@@ -225,19 +225,22 @@ router.post('/endvoting/profile/:id', function(req, res, next){
 	var year = date.getFullYear();
 	var newdate = day+"/"+month+"/"+year;
 	console.log(demo+", "+die);
-    
+    if (demo == null)
+		{
+			demo=0;
+		}
+	if(die == null){
+		die=0;
+	}
 	if(req.body.vote=="demo"){
 		demo+=1;
 	} else {
 		die+=1;
 	};
     
-	var total = demo + die;
-    var demoPercentage = demo / total * 100;
-    demoPercentage = Math.round(demoPercentage);
-	demoPercentage = demoPercentage.toString();
-    
-	res.send(demoPercentage);
+	demo = demo.toString();
+    die = die.toString();
+	res.send(demo+"/"+die);
     
 	Account.update({_id:id}, {$set:{demo:demo, die:die, onStage:true, date:newdate}}, function(err, result) {
         
