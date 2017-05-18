@@ -6,11 +6,6 @@ var Strategy = require('passport-facebook').Strategy;
 const mongoose = require('mongoose');
 var flash = require('connect-flash');
 
-var status = "75% Demo!";
-var name = "Some Name";
-var groups = "Some groups";
-var time = "Some time";
-
 /* GET profile page. */
 // profielpagina aanmaken met data uit de databank
 router.get('/:id', function(req, res, next) {
@@ -66,9 +61,9 @@ router.get('/:id', function(req, res, next) {
                 }
             }
 
-            var qs = photo.substring(0, photo.indexOf('?'));
+            var photoUser = photo.substring(0, photo.indexOf('?'));
 
-            res.render('profile', {name: name, photo:qs,courses:modifiedCourses,groups: groups, date: date, demo: demoPercentage, die: diePercentage, message: message })
+            res.render('profile', {name: name, photo:photoUser,courses:modifiedCourses,groups: groups, date: date, demo: demoPercentage, die: diePercentage, message: message })
         });
 
 

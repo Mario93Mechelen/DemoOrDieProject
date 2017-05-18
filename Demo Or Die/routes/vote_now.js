@@ -6,7 +6,6 @@ var Strategy = require('passport-facebook').Strategy;
 const mongoose = require('mongoose');
 var flash = require('connect-flash');
 
-var name = "Nog een naam";
 var status = "Vote Now!";
 
 
@@ -38,8 +37,8 @@ router.get('/profile/:id', function(req, res, next) {
                     }
                 }
             }
-            var qs = photo.substring(0, photo.indexOf('?'));
-            res.render('vote_now', {name: name, photo:qs, status: status, id:id, demo:demo, die:die})
+            var photoUser = photo.substring(0, photo.indexOf('?'));
+            res.render('vote_now', {name: name, photo:photoUser, status: status, id:id, demo:demo, die:die})
 	});
     
     console.log(req.user._id);

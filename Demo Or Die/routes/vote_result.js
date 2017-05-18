@@ -39,9 +39,9 @@ router.get('/:id/:vote', function(req, res, next) {
             }
 		}
         
-    	var qs = photo.substring(0, photo.indexOf('?'));
+    	var photoUser = photo.substring(0, photo.indexOf('?'));
         
-		res.render('vote_result', {name: name, status: status, photo:qs, vote:vote, id:personalID});
+		res.render('vote_result', {name: name, status: status, photo:photoUser, vote:vote, id:personalID});
 	});
     
 	Account.update({_id:userid}, {$set:{vote:true}}, function(err, result) {

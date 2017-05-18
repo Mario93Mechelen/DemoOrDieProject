@@ -38,8 +38,8 @@ router.get('/users', function(req, res, next) {
 
 // tonen van juiste users in het overzicht op basis van geselecteerde course en input van (deel van) de naam
 router.post('/users', function(req, res, next){ 
-            var partName = req.body.partName;
-		var course = req.body.option;
+        var partName = req.body.partName;
+        var course = req.body.option;
     
 		if( partName==undefined || partName==""){
             console.log(partName);
@@ -145,9 +145,9 @@ router.get('/profile/:id', function(req, res, next){
             }
 		}
         
-    	var qs = photo.substring(0, photo.indexOf('?'));
+    	var photoUser = photo.substring(0, photo.indexOf('?'));
         
-		res.render('profile', {name: name, photo:qs,courses:modifiedCourses, date: date, demo: demoPercentage, die: diePercentage, message: message });
+		res.render('profile', {name: name, photo:photoUser,courses:modifiedCourses, date: date, demo: demoPercentage, die: diePercentage, message: message });
         
 	});
 });
@@ -206,9 +206,9 @@ router.get('/endvoting/profile/:id', function(req, res, next){
             }
 		}
         
-    	var qs = photo.substring(0, photo.indexOf('?'));
+    	var photoUser = photo.substring(0, photo.indexOf('?'));
         
-		res.render('endvoting', {name: name, photo:qs,courses:modifiedCourses, date: date, demo: demoPercentage, die: diePercentage, message: message })
+		res.render('endvoting', {name: name, photo:photoUser,courses:modifiedCourses, date: date, demo: demoPercentage, die: diePercentage, message: message })
         
 	});
 });
